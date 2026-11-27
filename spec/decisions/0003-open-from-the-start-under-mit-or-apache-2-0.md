@@ -37,7 +37,7 @@ What was read that day:
 
 ## Assumptions to verify
 
-- [ ] The repository public, with both licence files, at its first commit: step 0.2.
+- [x] The repository public, with both licence files, at its first commit: on 2026-11-27, `gh repo create --public` with commit `947f3e2`; `gh repo view` says `PUBLIC`.
 
 ## Sources
 
