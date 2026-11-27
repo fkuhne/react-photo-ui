@@ -62,6 +62,7 @@ From the owner on 2026-11-27: "I want react-photo-ui repo to have some kind of U
 - **Its pages** (`gallery/pages.tsx`): the overview, with how an app takes the package and its themes; colour, every token by purpose with its value in each theme and every pair's contrast; type, the scale at 100% to 200% text; space and size; corners and depth; the icons, at 14, 20 and 28 px, a click copying `<Icon name="…" />`; and a page for each family of controls, which phase 2 fills.
 - **Built** as a static site, `npx vite build --base ./`, on the owner's planning Mac on 2026-11-27: 257.93 KB of JavaScript, 77.06 KB gzipped, and 9.22 KB of CSS, 2.12 KB gzipped.
 - **Drawn in WebKit** by `scripts/snapshot.swift`, at 1280 × 820: the overview dark, colour dark, the icons light and type in the paper palette, each as designed; the icons' lines crisp at 14 px.
+- **Online** at <https://fkuhne.github.io/react-photo-ui/>, published by `scripts/publish-site.sh` from a clean commit to the `gh-pages` branch ([0009](../spec/decisions/0009-the-site-on-github-pages-published-by-hand.md)).
 
 ## Commands
 

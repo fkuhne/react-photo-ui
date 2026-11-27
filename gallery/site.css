@@ -129,6 +129,16 @@ pre {
   color: var(--pu-color-text);
 }
 
+.site-link {
+  color: var(--pu-color-text-quiet);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-link:hover {
+  color: var(--pu-color-text);
+}
+
 .site-body {
   flex: 1;
   min-height: 0;

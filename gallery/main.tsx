@@ -105,6 +105,7 @@ function Site() {
             </button>
           ))}
         </div>
+        <a className="site-link" href="https://github.com/fkuhne/react-photo-ui">GitHub</a>
       </header>
       <div className="site-body">
         <nav className="site-nav" aria-label="Sections">

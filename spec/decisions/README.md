@@ -29,3 +29,4 @@ Don't rewrite a record to change its decision. Write a new record and mark the o
 | [0006](0006-tokens-in-the-w3c-format-made-into-css-variables-by-a-script-of-our-own.md) | Tokens in the W3C format, made into CSS variables by a script of our own | Accepted | 2026-11-27 |
 | [0007](0007-shared-controls-each-app-its-own-palette.md) | Shared controls, each app its own palette | Accepted | 2026-11-27 |
 | [0008](0008-a-site-of-its-own-to-browse-the-design-system.md) | A site of its own to browse the design system | Accepted | 2026-11-27 |
+| [0009](0009-the-site-on-github-pages-published-by-hand.md) | The site on GitHub Pages, published by hand | Accepted | 2026-11-27 |

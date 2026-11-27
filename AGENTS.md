@@ -51,6 +51,7 @@ npm run dev         # the site to browse it, at http://localhost:5180
 npm run check       # type-check the package and the site
 npm test            # the token and icon scripts' tests
 npm run make        # build dist/, committed with every change to src/, tokens/ or icons/; fails under 4.5:1 contrast
+scripts/publish-site.sh   # the site, from a clean commit, to GitHub Pages; by hand, at the owner's word (record 0009)
 ```
 
 Never add a script named `build`, `prepare`, `prepack`, `preinstall`, `install` or `postinstall`: npm would run it in each app's install of this git dependency ([0002](spec/decisions/0002-one-package-of-tokens-icons-and-controls-in-its-own-repository-pinned-by-each-app.md)).
