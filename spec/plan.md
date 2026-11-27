@@ -33,7 +33,10 @@ PhotoMatch's plan step 2.86.
 - [x] 1.4 A site to browse the design system, from the owner on 2026-11-27, "I want react-photo-ui repo to have some kind of UI to navigate through the design system and its components": the overview, the foundations, the icons and each family of controls, down the left; a search and the theme along the top; each page in every theme ([0008](decisions/0008-a-site-of-its-own-to-browse-the-design-system.md)).
 
   Done on 2026-11-27 ([0008](decisions/0008-a-site-of-its-own-to-browse-the-design-system.md) accepted): `gallery/`, its pages reading the built tokens, contrast and icons; drawn in WebKit, dark, light and paper, by `scripts/snapshot.swift`. At the owner's word, published on GitHub Pages by `scripts/publish-site.sh`, at <https://fkuhne.github.io/react-photo-ui/> ([0009](decisions/0009-the-site-on-github-pages-published-by-hand.md)). See [`docs/package.md`](../docs/package.md#step-14-the-site).
-- [ ] 1.5 PhotoMatch takes it, by its git URL over HTTPS pinned to a commit, its tokens' CSS loaded and nothing yet changed in its look; PhotoMatch's tests and self-check pass (PhotoMatch's record 0071).
+- [x] 1.5 PhotoMatch takes it, by its git URL over HTTPS pinned to a commit, its tokens' CSS loaded and nothing yet changed in its look; PhotoMatch's tests and self-check pass (PhotoMatch's record 0071).
+
+
+  Done on 2026-11-27 ([0002](decisions/0002-one-package-of-tokens-icons-and-controls-in-its-own-repository-pinned-by-each-app.md) accepted): PhotoMatch takes `photo-ui` at `52226ac`, `tokens.css` loaded and its look unchanged, its JavaScript the same size, its CSS 656 bytes larger gzipped; its self-check passing on one folder; its notices listing the package, what it brings and Lucide's licence. PhotoMatch's plan step 2.86 and record 0071. See [`docs/package.md`](../docs/package.md#step-15-photomatch-takes-it).
 
 ## Phase 2: The controls
 

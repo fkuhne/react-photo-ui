@@ -1,6 +1,6 @@
 # 0002. One package of tokens, icons and controls, in its own repository, pinned by each app
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-11-27
 
 ## Context
@@ -20,7 +20,7 @@ The owner's picks of 2026-11-27, in PhotoMatch's step 2.86: "go with your recomm
 - **Its source in TypeScript and CSS,** built by the repository's own build, run before each commit that changes it.
 - **The apps' versions:** React, TypeScript and Vite at the versions the apps pin, as peers where an app brings them.
 - **While a change is under way,** an app may point at the local folder; a pin to a commit is what's committed, as with `rust-photo-library`.
-- **Over HTTPS,** as the repository is public ([0003](0003-open-from-the-start-under-mit-or-apache-2-0.md)): no key, in the apps' CI or anywhere.
+- **Over HTTPS,** as the repository is public ([0003](0003-open-from-the-start-under-mit-or-apache-2-0.md)): no key, in the apps' CI or anywhere. The address is written by hand in an app's `package.json`, `git+https://github.com/fkuhne/react-photo-ui.git#<commit>`, as `npm install` of it saves `github:…` shorthand; npm's lockfile records `git+ssh://…` all the same, and fetches without a key.
 
 ## Alternatives considered
 
@@ -41,7 +41,7 @@ The owner's picks of 2026-11-27, in PhotoMatch's step 2.86: "go with your recomm
 
 ## Assumptions to verify
 
-- [ ] `npm ci` in PhotoMatch installs it from a pinned commit over HTTPS, running no script of ours: step 1.5.
+- [x] `npm ci` in PhotoMatch installs it from a pinned commit over HTTPS, running no script of ours: on 2026-11-27, step 1.5, at `52226ac`; with an empty cache and SSH made to fail, as on a CI runner, though npm records the lockfile's `resolved` as `git+ssh` ([`docs/package.md`](../../docs/package.md#step-15-photomatch-takes-it)).
 - [x] The built files stay small: on 2026-11-27, step 1.1, 447 bytes in `dist/`, 6,211 bytes as npm packs it for an app ([`docs/package.md`](../../docs/package.md#step-11-the-package)); the build named `make`, as a `build` or `prepare` script would run in each app's install.
 
 ## Sources

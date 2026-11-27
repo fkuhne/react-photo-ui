@@ -64,6 +64,14 @@ From the owner on 2026-11-27: "I want react-photo-ui repo to have some kind of U
 - **Drawn in WebKit** by `scripts/snapshot.swift`, at 1280 × 820: the overview dark, colour dark, the icons light and type in the paper palette, each as designed; the icons' lines crisp at 14 px.
 - **Online** at <https://fkuhne.github.io/react-photo-ui/>, published by `scripts/publish-site.sh` from a clean commit to the `gh-pages` branch ([0009](../spec/decisions/0009-the-site-on-github-pages-published-by-hand.md)).
 
+## Step 1.5: PhotoMatch takes it
+
+On 2026-11-27, PhotoMatch's plan step 2.86 and its record 0071, on the owner's planning Mac (Node 22.22.0, npm 10.9.4):
+- **The address:** `npm install "photo-ui@git+https://github.com/fkuhne/react-photo-ui.git#<commit>"` saved it as `github:fkuhne/react-photo-ui#<commit>`; written by hand in `package.json` as `git+https://…`, it stays so. The lockfile's `resolved` is `git+ssh://git@github.com/fkuhne/react-photo-ui.git#<commit>` either way, npm's own way for GitHub.
+- **No key needed:** `npm ci --ignore-scripts` on a copy of PhotoMatch's `package.json` and lockfile, with an empty `--cache` and `GIT_SSH_COMMAND=false`, so that SSH fails as on a CI runner, installed `photo-ui` 0.1.0 with its `dist/`.
+- **What it brings** into an app's `node_modules`: 14 packages, 61 MB, `react-aria` 37 MB, `react-aria-components` 10 MB and `react-stately` 9.8 MB of it; `photo-ui` itself 108 KB. Into its built interface, with `tokens.css` imported and nothing else: 3,955 bytes of CSS, 656 gzipped, and no JavaScript.
+- **Licences:** each of the 14 has its licence text, but `client-only` 0.0.1, an empty marker package of the React project, MIT, which an app's notices may take from React's own `LICENSE`; Lucide's is `dist/LICENSE-LUCIDE`.
+
 ## Commands
 
 ```sh
