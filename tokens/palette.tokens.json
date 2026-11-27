@@ -233,6 +233,28 @@
           ],
           "hex": "#ffffff"
         }
+      },
+      "5": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0667,
+            0.0667,
+            0.0706
+          ],
+          "hex": "#111112"
+        }
+      },
+      "92": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9137,
+            0.9137,
+            0.9255
+          ],
+          "hex": "#e9e9ec"
+        }
       }
     },
     "amber": {
@@ -345,7 +367,31 @@
           "hex": "#000000"
         }
       },
-      "$description": "Black, by its opacity in percent, for shadows"
+      "$description": "Black, by its opacity in percent, for shadows",
+      "45": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.45,
+          "hex": "#000000"
+        }
+      },
+      "72": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.72,
+          "hex": "#000000"
+        }
+      }
     },
     "red": {
       "55": {
@@ -369,6 +415,29 @@
           ],
           "hex": "#d1382f"
         }
+      },
+      "70": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1.0,
+            0.5412,
+            0.502
+          ],
+          "hex": "#ff8a80"
+        }
+      },
+      "39": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6941,
+            0.1412,
+            0.1412
+          ],
+          "hex": "#b12424"
+        },
+        "$description": "PhotoMatch's light error red, #c62828, a step darker: 4.6:1 on Graphite light's canvas, where its own is 3.88:1"
       }
     },
     "yellow": {

@@ -144,6 +144,8 @@ export function Colour() {
 export function Type() {
   const [scale, setScale] = useState(1);
   const sizes = [
+    { name: "display", what: "A window's title, as the welcome's and About's", text: "Welcome to PhotoMatch" },
+    { name: "heading", what: "A panel's or a dialog's own heading", text: "Keyboard Shortcuts" },
     { name: "title", what: "A dialog's title", text: "Move 2 Photos to “2026-08-10 Paris”" },
     { name: "text", what: "Text and controls", text: "Capture Time, Oldest first · 20 photos, 3 selected" },
     { name: "caption", what: "Captions and quieter labels", text: "DSC01311.ARW · 1/250 · f/2.8 · ISO 400" },
@@ -163,7 +165,7 @@ export function Type() {
       <div className="card" style={{ ["--pu-text-scale" as string]: scale, display: "flex", flexDirection: "column", gap: "var(--pu-space-16)" }}>
         {sizes.map((s) => (
           <div key={s.name} style={{ display: "flex", flexDirection: "column", gap: "var(--pu-space-2)" }}>
-            <span style={{ fontSize: v(`--pu-font-size-${s.name}`), lineHeight: v(`--pu-font-line-${s.name}`), fontWeight: s.name === "title" ? v("--pu-font-weight-strong") : undefined }}>{s.text}</span>
+            <span style={{ fontSize: v(`--pu-font-size-${s.name}`), lineHeight: v(`--pu-font-line-${s.name}`), fontWeight: ["title", "heading", "display"].includes(s.name) ? v("--pu-font-weight-strong") : undefined }}>{s.text}</span>
             <code className="quiet">
               --pu-font-size-{s.name}: {tokens("graphite-dark")[`--pu-font-size-${s.name}`].value} · {s.what}
             </code>

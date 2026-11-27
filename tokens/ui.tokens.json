@@ -40,6 +40,20 @@
           "unit": "px"
         },
         "$description": "A dialog's title"
+      },
+      "heading": {
+        "$value": {
+          "value": 15,
+          "unit": "px"
+        },
+        "$description": "A panel's or a dialog's own heading"
+      },
+      "display": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "A window's title, as the welcome's and About's"
       }
     },
     "line": {
@@ -64,6 +78,18 @@
       "title": {
         "$value": {
           "value": 18,
+          "unit": "px"
+        }
+      },
+      "heading": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        }
+      },
+      "display": {
+        "$value": {
+          "value": 28,
           "unit": "px"
         }
       }
@@ -110,6 +136,13 @@
         "unit": "px"
       },
       "$description": "Dialogs"
+    },
+    "full": {
+      "$value": {
+        "value": 999,
+        "unit": "px"
+      },
+      "$description": "Round: circles and pills"
     }
   },
   "space": {
@@ -160,6 +193,18 @@
     "20": {
       "$value": {
         "value": 20,
+        "unit": "px"
+      }
+    },
+    "24": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "32": {
+      "$value": {
+        "value": 32,
         "unit": "px"
       }
     }

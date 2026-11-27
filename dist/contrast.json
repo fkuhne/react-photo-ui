@@ -113,6 +113,30 @@
       "on": "color.accent",
       "ratio": 6.62,
       "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.canvas",
+      "ratio": 7.29,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.panel",
+      "ratio": 6.61,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.caption",
+      "ratio": 6.35,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.popover",
+      "ratio": 5.76,
+      "ok": true
     }
   ],
   "graphite-light": [
@@ -229,6 +253,30 @@
       "on": "color.accent",
       "ratio": 5,
       "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.canvas",
+      "ratio": 4.6,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.panel",
+      "ratio": 5.66,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.caption",
+      "ratio": 5.36,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.popover",
+      "ratio": 6.67,
+      "ok": true
     }
   ],
   "paper-light": [
@@ -344,6 +392,30 @@
       "text": "color.on-accent",
       "on": "color.accent",
       "ratio": 5.91,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.canvas",
+      "ratio": 5.21,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.panel",
+      "ratio": 6.39,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.caption",
+      "ratio": 6.07,
+      "ok": true
+    },
+    {
+      "text": "color.error",
+      "on": "color.popover",
+      "ratio": 6.67,
       "ok": true
     }
   ]

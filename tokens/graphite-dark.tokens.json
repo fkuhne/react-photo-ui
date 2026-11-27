@@ -126,6 +126,37 @@
       "blue": {
         "$value": "{palette.blue.63}"
       }
+    },
+    "backdrop": {
+      "$value": "{palette.grey.5}",
+      "$description": "Behind a photo in the photo view and Compare"
+    },
+    "on-photo": {
+      "$value": "{palette.grey.100}",
+      "$description": "Text and marks over a photo, on a scrim, the same in every theme"
+    },
+    "scrim": {
+      "$value": "{palette.black.72}",
+      "$description": "Behind text over a photo"
+    },
+    "scrim-soft": {
+      "$value": "{palette.black.45}",
+      "$description": "Behind a button over a photo"
+    },
+    "error": {
+      "$value": "{palette.red.70}",
+      "$description": "What went wrong, as text",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.canvas",
+            "color.panel",
+            "color.caption",
+            "color.popover"
+          ],
+          "least": 4.5
+        }
+      }
     }
   },
   "shadow": {

@@ -38,6 +38,10 @@ PhotoMatch's plan step 2.86.
 
   Done on 2026-11-27 ([0002](decisions/0002-one-package-of-tokens-icons-and-controls-in-its-own-repository-pinned-by-each-app.md) accepted): PhotoMatch takes `photo-ui` at `52226ac`, `tokens.css` loaded and its look unchanged, its JavaScript the same size, its CSS 656 bytes larger gzipped; its self-check passing on one folder; its notices listing the package, what it brings and Lucide's licence. PhotoMatch's plan step 2.86 and record 0071. See [`docs/package.md`](../docs/package.md#step-15-photomatch-takes-it).
 
+- [x] 1.6 What PhotoMatch's styles need of the tokens, from its plan step 2.87, the owner's picks of 2026-11-27: two more type sizes, `heading` 15 px and `display` 20 px; space 24 and 32; a round corner, `radius.full`; and four purposes, `backdrop`, `on-photo`, `scrim` and `scrim-soft`, and `error`, checked at 4.5:1 ([0010](decisions/0010-two-more-type-sizes-space-24-and-32-a-round-corner-and-colours-for-photos-and-errors.md)).
+
+  Done on 2026-11-27: Graphite light's error red is `#b12424`, as PhotoMatch's own `#c62828` is 3.88:1 on its canvas; 69 pairs of text checked, all 4.5:1 or more. See [`docs/package.md`](../docs/package.md#step-16-what-photomatchs-styles-need).
+
 ## Phase 2: The controls
 
 PhotoMatch's plan step 2.88. Each family on its page of the site, in every theme, its keys checked, then taken by PhotoMatch with its self-check. *Design choices.*

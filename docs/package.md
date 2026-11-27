@@ -72,6 +72,14 @@ On 2026-11-27, PhotoMatch's plan step 2.86 and its record 0071, on the owner's p
 - **What it brings** into an app's `node_modules`: 14 packages, 61 MB, `react-aria` 37 MB, `react-aria-components` 10 MB and `react-stately` 9.8 MB of it; `photo-ui` itself 108 KB. Into its built interface, with `tokens.css` imported and nothing else: 3,955 bytes of CSS, 656 gzipped, and no JavaScript.
 - **Licences:** each of the 14 has its licence text, but `client-only` 0.0.1, an empty marker package of the React project, MIT, which an app's notices may take from React's own `LICENSE`; Lucide's is `dist/LICENSE-LUCIDE`.
 
+## Step 1.6: what PhotoMatch's styles need
+
+On 2026-11-27, for PhotoMatch's plan step 2.87, from a count of its `App.css`: 13 of its 57 text sizes off Graphite's 11, 12 and 13 px, at 14, 15, 18 and 20 px for headings; its dialogs' 24 px of padding, nine times; circles and pills; white text on black scrims over photos; a backdrop behind them; and error text ([0010](../spec/decisions/0010-two-more-type-sizes-space-24-and-32-a-round-corner-and-colours-for-photos-and-errors.md)).
+
+- **Added:** `--pu-font-size-heading` 15 px and `--pu-font-size-display` 20 px, with lines of 20 and 28 px; `--pu-space-24` and `--pu-space-32`; `--pu-radius-full`, 999 px; and in each theme `--pu-color-backdrop`, `--pu-color-on-photo`, `--pu-color-scrim`, black at 72%, `--pu-color-scrim-soft`, black at 45%, and `--pu-color-error`.
+- **The check found** PhotoMatch's light error red, `#c62828`, at 3.88:1 on Graphite light's canvas, and 4.39:1 on paper's. The lightest red of its hue at 4.6:1 or more on every light surface, by stepping its lightness down by 1%, is `#b12424`.
+- **`npm run make`:** 69 pairs, all 4.5:1 or more; the closest, the light error red on the canvas, 4.60:1. `dist/` 65,060 bytes, 10,695 gzipped.
+
 ## Commands
 
 ```sh
