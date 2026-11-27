@@ -35,7 +35,7 @@ What was known that day:
 
 ## Assumptions to verify
 
-- [ ] The site answers at its address, every page and the icons drawn: once published.
+- [x] The site answers at its address, every page and the icons drawn: on 2026-11-27, published from commit `66300b6`; Pages built in about 25 s; the page, its script, 258,041 bytes, and its stylesheet, 9,352 bytes, answered `200`; the colour page drawn from the live address in WebKit, light, as designed.
 
 ## Sources
 
