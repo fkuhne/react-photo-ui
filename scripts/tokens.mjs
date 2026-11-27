@@ -34,7 +34,7 @@ export function flatten(tree, origin, found = new Map(), path = [], inherited) {
     if ("$value" in node) {
       const own = node.$type ?? type;
       if (!own) throw new TokenError(`${here.join(".")}: no $type, its own or a group's`);
-      found.set(here.join("."), { path: here, type: own, value: node.$value, extensions: node.$extensions, groupExtensions: tree.$extensions, origin: node.$origin ?? origin });
+      found.set(here.join("."), { path: here, type: own, value: node.$value, description: node.$description, extensions: node.$extensions, groupExtensions: tree.$extensions, origin: node.$origin ?? origin });
     } else flatten(node, origin, found, here, type);
   }
   return found;
@@ -191,7 +191,11 @@ export function table({ themes, options }) {
   return Object.fromEntries(
     Object.entries(themes).map(([context, resolved]) => [
       context,
-      Object.fromEntries([...resolved.values()].filter((t) => t.path[0] !== "palette").map((t) => [variable(prefix, t.path), { type: t.type, value: css(t.type, t.value, t.path.join(".")), shared: t.origin === "base" }])),
+      Object.fromEntries(
+        [...resolved.values()]
+          .filter((t) => t.path[0] !== "palette")
+          .map((t) => [variable(prefix, t.path), { type: t.type, value: css(t.type, t.value, t.path.join(".")), shared: t.origin === "base", ...(t.description ? { description: t.description } : {}) }]),
+      ),
     ]),
   );
 }

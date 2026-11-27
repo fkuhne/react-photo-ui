@@ -1,6 +1,6 @@
 # 0005. Lucide's icons, those used, copied as SVG files
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-11-27
 
 ## Context
@@ -13,7 +13,8 @@ The owner's pick of 2026-11-27, in PhotoMatch's step 2.86: "go with your recomme
 
 **The icons come from Lucide alone: the SVG files of those the apps use, copied into the repository unchanged, with Lucide's ISC licence beside them, drawn through one `Icon` component.**
 
-- **One component,** `Icon`, taking an icon's name, its size, Graphite's line width and the text's colour.
+- **One component,** `Icon`, taking an icon's name, its size, Graphite's line width and the text's colour. Its line is `--pu-icon-stroke`, 1.4 px, the same at any size, as a stroke that doesn't scale (`vector-effect: non-scaling-stroke`), rather than Lucide's 2 units of 24, which would be 1.17 px at 14 px (computed).
+- **The shapes alone are kept:** `scripts/icons.mjs` lets through Lucide's root as it is and only path, circle, line, rect, polyline, polygon and ellipse with their geometry, a fill only in the text's colour; anything else fails the build.
 - **Added by copying its file,** from Lucide's own SVG package at a version written down beside them.
 - **No icon package at run time.**
 
@@ -33,7 +34,8 @@ The owner's pick of 2026-11-27, in PhotoMatch's step 2.86: "go with your recomme
 
 ## Assumptions to verify
 
-- [ ] Lucide's 2-unit line, made thinner, reads well at 14 px on both systems: step 1.3.
+- [x] Lucide's line reads well at 14 px on a Mac: on 2026-11-27, step 1.4, the 39 icons drawn in WebKit at 14 px, their line 1.4 px wide by a stroke that doesn't scale, crisp in Graphite light (`scripts/snapshot.swift`).
+- [ ] The same on Windows, in WebView2: the owner's PC.
 
 ## Sources
 

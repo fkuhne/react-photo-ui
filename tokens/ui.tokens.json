@@ -199,5 +199,28 @@
       },
       "$description": "The bar below the photos"
     }
+  },
+  "icon": {
+    "$type": "dimension",
+    "$extensions": {
+      "org.photo-ui": {
+        "scaled": true
+      }
+    },
+    "$description": "An icon's size and line, scaled with the text",
+    "size": {
+      "$value": {
+        "value": 14,
+        "unit": "px"
+      },
+      "$description": "An icon beside text"
+    },
+    "stroke": {
+      "$value": {
+        "value": 1.4,
+        "unit": "px"
+      },
+      "$description": "An icon's line, its width at any size, as in Graphite's mock-ups (PhotoMatch's record 0070)"
+    }
   }
 }

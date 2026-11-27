@@ -28,6 +28,8 @@
   --pu-size-menu-row: 22px;
   --pu-size-tree-row: 24px;
   --pu-size-bar: 26px;
+  --pu-icon-size: calc(14px * var(--pu-text-scale, 1));
+  --pu-icon-stroke: calc(1.4px * var(--pu-text-scale, 1));
 }
 
 :root, [data-theme="dark"] {

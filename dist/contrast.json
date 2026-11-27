@@ -1,0 +1,350 @@
+{
+  "graphite-dark": [
+    {
+      "text": "color.text",
+      "on": "color.canvas",
+      "ratio": 13.12,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.panel",
+      "ratio": 11.89,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.caption",
+      "ratio": 11.43,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.control",
+      "ratio": 10.37,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.field",
+      "ratio": 13.12,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.popover",
+      "ratio": 10.37,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.chip",
+      "ratio": 9.2,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.pressed",
+      "ratio": 8.11,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.canvas",
+      "ratio": 6.4,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.panel",
+      "ratio": 5.81,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.caption",
+      "ratio": 5.58,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.control",
+      "ratio": 5.06,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.field",
+      "ratio": 6.4,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.popover",
+      "ratio": 5.06,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.panel",
+      "ratio": 6,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.control",
+      "ratio": 5.23,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.popover",
+      "ratio": 5.23,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.caption",
+      "ratio": 5.77,
+      "ok": true
+    },
+    {
+      "text": "color.on-accent",
+      "on": "color.accent",
+      "ratio": 6.62,
+      "ok": true
+    }
+  ],
+  "graphite-light": [
+    {
+      "text": "color.text",
+      "on": "color.canvas",
+      "ratio": 11.73,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.panel",
+      "ratio": 14.42,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.caption",
+      "ratio": 13.66,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.control",
+      "ratio": 15.88,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.field",
+      "ratio": 17,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.popover",
+      "ratio": 17,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.chip",
+      "ratio": 12.44,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.pressed",
+      "ratio": 11.07,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.canvas",
+      "ratio": 4.95,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.panel",
+      "ratio": 6.08,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.caption",
+      "ratio": 5.76,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.control",
+      "ratio": 6.69,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.field",
+      "ratio": 7.17,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.popover",
+      "ratio": 7.17,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.panel",
+      "ratio": 5.1,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.control",
+      "ratio": 5.62,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.popover",
+      "ratio": 6.02,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.caption",
+      "ratio": 4.84,
+      "ok": true
+    },
+    {
+      "text": "color.on-accent",
+      "on": "color.accent",
+      "ratio": 5,
+      "ok": true
+    }
+  ],
+  "paper-light": [
+    {
+      "text": "color.text",
+      "on": "color.canvas",
+      "ratio": 13.3,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.panel",
+      "ratio": 16.31,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.caption",
+      "ratio": 15.49,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.control",
+      "ratio": 17.03,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.field",
+      "ratio": 17.03,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.popover",
+      "ratio": 17.03,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.chip",
+      "ratio": 13.3,
+      "ok": true
+    },
+    {
+      "text": "color.text",
+      "on": "color.pressed",
+      "ratio": 13.3,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.canvas",
+      "ratio": 4.66,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.panel",
+      "ratio": 5.72,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.caption",
+      "ratio": 5.43,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.control",
+      "ratio": 5.97,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.field",
+      "ratio": 5.97,
+      "ok": true
+    },
+    {
+      "text": "color.text-quiet",
+      "on": "color.popover",
+      "ratio": 5.97,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.panel",
+      "ratio": 5.66,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.control",
+      "ratio": 5.91,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.popover",
+      "ratio": 5.91,
+      "ok": true
+    },
+    {
+      "text": "color.accent-text",
+      "on": "color.caption",
+      "ratio": 5.37,
+      "ok": true
+    },
+    {
+      "text": "color.on-accent",
+      "on": "color.accent",
+      "ratio": 5.91,
+      "ok": true
+    }
+  ]
+}

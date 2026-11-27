@@ -11,6 +11,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
 import { build, checkContrast, stylesheet, table, TokenError } from "./tokens.mjs";
+import { iconModule, IconError, readIcons } from "./icons.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const src = join(root, "src");
@@ -45,8 +46,10 @@ try {
   fail(e instanceof TokenError ? `tokens: ${e.message}` : String(e));
 }
 let failed = 0;
+const contrasts = {};
 for (const [context, resolved] of Object.entries(tokens.themes)) {
-  for (const pair of checkContrast(resolved)) {
+  contrasts[context] = checkContrast(resolved).map((p) => ({ ...p, ratio: Math.round(p.ratio * 100) / 100 }));
+  for (const pair of contrasts[context]) {
     if (!pair.ok) failed++;
     console.log(`${pair.ok ? "ok    " : "FAILED"} ${context.padEnd(15)} ${pair.text.padEnd(18)} on ${pair.on.padEnd(14)} ${pair.ratio.toFixed(2)}:1`);
   }
@@ -54,6 +57,20 @@ for (const [context, resolved] of Object.entries(tokens.themes)) {
 if (failed) fail(`${failed} pairs of text and background under their least contrast`);
 writeFileSync(join(dist, "tokens.css"), stylesheet(tokens));
 writeFileSync(join(dist, "tokens.json"), JSON.stringify(table(tokens), null, 2) + "\n");
+writeFileSync(join(dist, "contrast.json"), JSON.stringify(contrasts, null, 2) + "\n");
+
+// The icons (record 0005): their shapes into src/icon-data.ts, for TypeScript to build with the rest,
+// and Lucide's licence beside the built files, which hold its icons.
+const lucide = join(root, "icons", "lucide");
+const lucideVersion = JSON.parse(readFileSync(join(lucide, "version.json"), "utf8")).version;
+try {
+  const icons = readIcons(lucide);
+  writeFileSync(join(src, "icon-data.ts"), iconModule(icons, lucideVersion));
+  console.log(`icons: ${Object.keys(icons).length} from Lucide ${lucideVersion}`);
+} catch (e) {
+  fail(e instanceof IconError ? `icons: ${e.message}` : String(e));
+}
+copyFileSync(join(lucide, "LICENSE"), join(dist, "LICENSE-LUCIDE"));
 const tsc = spawnSync(process.execPath, [join(root, "node_modules", "typescript", "bin", "tsc"), "-p", join(root, "tsconfig.build.json")], { stdio: "inherit" });
 if (tsc.status !== 0) fail("TypeScript's build failed");
 

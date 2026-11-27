@@ -47,10 +47,10 @@ It needs Node 22. How the package is built and why: [`docs/package.md`](docs/pac
 
 ```sh
 npm install         # once, and after a dependency changes
-npm run dev         # the gallery page, at http://localhost:5180
-npm run check       # type-check the package and the gallery
-npm test            # the token script's tests
-npm run make        # build dist/, committed with every change to src/ or tokens/; fails under 4.5:1 contrast
+npm run dev         # the site to browse it, at http://localhost:5180
+npm run check       # type-check the package and the site
+npm test            # the token and icon scripts' tests
+npm run make        # build dist/, committed with every change to src/, tokens/ or icons/; fails under 4.5:1 contrast
 ```
 
 Never add a script named `build`, `prepare`, `prepack`, `preinstall`, `install` or `postinstall`: npm would run it in each app's install of this git dependency ([0002](spec/decisions/0002-one-package-of-tokens-icons-and-controls-in-its-own-repository-pinned-by-each-app.md)).
@@ -64,6 +64,7 @@ Never add a script named `build`, `prepare`, `prepack`, `preinstall`, `install` 
 - **No money is spent without a record:** hardware, rented compute and paid APIs.
 - **Public:** no secret, private path, or detail of the owner's private projects beyond what the documentation needs. Every dependency, icon and font allows MIT or Apache 2.0 publishing and closed use, and is credited; nothing from GPL or AGPL code ([0003](spec/decisions/0003-open-from-the-start-under-mit-or-apache-2-0.md)).
 - **Controls on React Aria Components,** styled by our tokens only ([0004](spec/decisions/0004-the-controls-built-on-react-aria-components.md)).
-- **Icons from Lucide alone,** copied as SVG files, the ones used ([0005](spec/decisions/0005-lucide-s-icons-those-used-copied-as-svg-files.md)).
+- **Icons from Lucide alone,** copied unchanged as SVG files into `icons/lucide/`, the ones used, its version in `version.json`; `src/icon-data.ts` is made from them by `npm run make` ([0005](spec/decisions/0005-lucide-s-icons-those-used-copied-as-svg-files.md)).
+- **Each part on the site:** a new token, icon or control shows on its page in `gallery/`, in every theme ([0008](spec/decisions/0008-a-site-of-its-own-to-browse-the-design-system.md)); a step shows its pages drawn by `scripts/snapshot.swift`.
 - **Values only through the tokens:** no colour, text size, space or corner written in a control's styles; the tokens' CSS made only by our script ([0006](spec/decisions/0006-tokens-in-the-w3c-format-made-into-css-variables-by-a-script-of-our-own.md)).
 - **No app's own look in the shared controls:** an app's palette is a theme over them ([0007](spec/decisions/0007-shared-controls-each-app-its-own-palette.md)).

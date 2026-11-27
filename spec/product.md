@@ -32,7 +32,7 @@ One package, `photo-ui`, in its own repository ([0002](decisions/0002-one-packag
 - **Design tokens:** colour, type, spacing, corners and depth, in the W3C Design Tokens format, 2025.10, made into CSS variables, dark and light ([0006](decisions/0006-tokens-in-the-w3c-format-made-into-css-variables-by-a-script-of-our-own.md)). The first palette is Graphite, PhotoMatch's (its record 0070); each app may set its own over the shared controls ([0007](decisions/0007-shared-controls-each-app-its-own-palette.md)).
 - **Icons:** the ones the apps use, from Lucide, copied as SVG files with Lucide's licence, drawn through one component ([0005](decisions/0005-lucide-s-icons-those-used-copied-as-svg-files.md)).
 - **Controls,** in React and TypeScript, built on React Aria Components, which brings their accessibility and their keys ([0004](decisions/0004-the-controls-built-on-react-aria-components.md)): buttons; fields and dropdowns; segmented choices, sliders and switches; popovers, menus, tooltips, dialogs and messages; panels, lists, a folder tree and a tags field.
-- **A gallery page,** run with `npm run dev`, showing every token, icon and control, dark and light.
+- **A site to browse it,** from the owner on 2026-11-27, "I want react-photo-ui repo to have some kind of UI to navigate through the design system and its components": its sections down the left, the overview, the foundations, the icons and each family of controls, each page with its examples in every theme and how to use it, a search and the theme along the top, run with `npm run dev`, and a static site that can be put anywhere ([0008](decisions/0008-a-site-of-its-own-to-browse-the-design-system.md)).
 
 Its built files are committed, so that a pinned commit is exactly what an app gets, with nothing built on install. An app takes it by its public git URL, over HTTPS, with no key.
 
@@ -51,7 +51,7 @@ Its built files are committed, so that a pinned commit is exactly what an app ge
 - Graphite's tokens, dark and light, and the script that makes them CSS;
 - the icons PhotoMatch uses;
 - every control family PhotoMatch uses;
-- the gallery page;
+- the site to browse it;
 - PhotoMatch on it: its plan steps 2.86 to 2.88.
 
 **Next:**

@@ -7,9 +7,12 @@ How `photo-ui` is laid out, built and taken, and what each step measured, with t
 - **`src/`:** the package's source, TypeScript and CSS. `src/index.ts` is what an app imports.
 - **`dist/`:** the built package, committed ([0002](../spec/decisions/0002-one-package-of-tokens-icons-and-controls-in-its-own-repository-pinned-by-each-app.md)): JavaScript, type files and the stylesheets. Rebuilt by `npm run make` in every commit that changes `src/`.
 - **`tokens/`:** the design tokens, in the W3C Design Tokens format 2025.10 ([0006](../spec/decisions/0006-tokens-in-the-w3c-format-made-into-css-variables-by-a-script-of-our-own.md)): `palette.tokens.json`, the raw colours named by hue and lightness, CIE L* rounded down; `ui.tokens.json`, the type, corners, space and sizes every theme shares; a file of names by purpose for each theme, `graphite-dark`, `graphite-light` and `paper-light`, a draft of PhotoBook's; and `photo-ui.resolver.json`, which ties them together, the theme as its one modifier, and says each theme's CSS selector in its `$extensions`.
-- **`gallery/`:** the gallery page, run by `npm run dev` from the source, never shipped.
+- **`icons/lucide/`:** Lucide's SVG files the apps use, copied unchanged, its licence and `version.json` ([0005](../spec/decisions/0005-lucide-s-icons-those-used-copied-as-svg-files.md)); `src/icon-data.ts` is made from them.
+- **`gallery/`:** the site to browse the design system, run by `npm run dev` from the source, never shipped ([0008](../spec/decisions/0008-a-site-of-its-own-to-browse-the-design-system.md)).
 - **`scripts/make.mjs`:** the build. It checks `src/index.ts`'s version is `package.json`'s, makes the tokens' CSS and table with `scripts/tokens.mjs`, failing on a pair of text and background under 4.5:1, compiles `src/` with `tsconfig.build.json`, copies the stylesheets, and prints each built file's size.
-- **`scripts/tokens.mjs`:** the tokens into `dist/tokens.css` and `dist/tokens.json`; its tests in `scripts/tokens.test.mjs`, `npm test`.
+- **`scripts/tokens.mjs`:** the tokens into `dist/tokens.css`, `dist/tokens.json` and `dist/contrast.json`; its tests in `scripts/tokens.test.mjs`.
+- **`scripts/icons.mjs`:** the icons' shapes into `src/icon-data.ts`; its tests in `scripts/icons.test.mjs`. `npm test` runs both.
+- **`scripts/snapshot.swift`:** draws pages of the site in WebKit, off screen, into PNG files, on a Mac.
 
 ## Choices the build makes
 
@@ -42,12 +45,30 @@ On the owner's planning Mac (as in step 1.1), 2026-11-27:
 - **The built files:** `dist/tokens.css` 4,448 bytes, 1,027 gzipped; `dist/tokens.json` 15,787 bytes, 996 gzipped; `dist/` 20,682 bytes in all.
 - **The gallery page,** built: 234.54 KB of JavaScript, 71.00 KB gzipped, and 3.85 KB of CSS, 0.90 KB gzipped.
 
+## Step 1.3: the icons
+
+39 of Lucide's icons, from the npm package `lucide-static` 1.82.0, its `icons/` folder and `LICENSE`, copied unchanged on 2026-11-27: the ones PhotoMatch draws today and those Graphite's mock-ups show. Lucide's licence is ISC, with an MIT notice for the icons derived from Feather, among them `check`, `chevron-*`, `crosshair`, `info`, `minus`, `plus`, `search`, `trash-2`, `x` and `zoom-*`; both travel in `LICENSE-LUCIDE` beside the built files.
+
+- **What the files hold:** four shapes, path, circle, line and rect; one fill, the text's colour, on the dot of `tag`. Every root is Lucide's, a 24-unit grid with a line 2 units wide.
+- **`Icon`** draws an icon's shapes in the text's colour at `--pu-icon-size`, 14 px, with a line `--pu-icon-stroke`, 1.4 px, that doesn't scale with the icon (`vector-effect: non-scaling-stroke`): Lucide's own 2 units would be 1.17 px at 14 px (computed). Both follow `--pu-text-scale`. Named for a screen reader with `label`, else hidden from it.
+- **`npm test`:** 9 tests pass, 4 of them the icons': Lucide's files read, `line`'s `x1` to `y2` kept, a script, an image, a style, a handler, another fill and another grid refused by name.
+- **`npm run make`:** `dist/icon-data.js` 7,732 bytes, 2,133 gzipped; `dist/Icon.js` 805 bytes, 459 gzipped.
+
+## Step 1.4: the site
+
+From the owner on 2026-11-27: "I want react-photo-ui repo to have some kind of UI to navigate through the design system and its components" ([0008](../spec/decisions/0008-a-site-of-its-own-to-browse-the-design-system.md)).
+
+- **Its frame** (`gallery/main.tsx`, `gallery/site.css`): a bar along the top with the name and version, a search of the pages and icons, and the theme, System, Dark, Light or Paper, kept in the browser; the sections down the left, Overview, Foundations, Icons and Controls, each control family marked with the plan step that builds it; the page beside them. Each page has its address, `#/foundations/colour`, so that it links and works as a static site anywhere. Its styles name the tokens alone.
+- **Its pages** (`gallery/pages.tsx`): the overview, with how an app takes the package and its themes; colour, every token by purpose with its value in each theme and every pair's contrast; type, the scale at 100% to 200% text; space and size; corners and depth; the icons, at 14, 20 and 28 px, a click copying `<Icon name="…" />`; and a page for each family of controls, which phase 2 fills.
+- **Built** as a static site, `npx vite build --base ./`, on the owner's planning Mac on 2026-11-27: 257.93 KB of JavaScript, 77.06 KB gzipped, and 9.22 KB of CSS, 2.12 KB gzipped.
+- **Drawn in WebKit** by `scripts/snapshot.swift`, at 1280 × 820: the overview dark, colour dark, the icons light and type in the paper palette, each as designed; the icons' lines crisp at 14 px.
+
 ## Commands
 
 ```sh
 npm install         # once, and after a dependency changes
-npm run dev         # the gallery page, at http://localhost:5180
-npm run check       # type-check the package and the gallery
-npm test            # the token script's tests
+npm run dev         # the site, at http://localhost:5180
+npm run check       # type-check the package and the site
+npm test            # the token and icon scripts' tests
 npm run make        # build dist/, to commit with the change; fails under 4.5:1 contrast
 ```

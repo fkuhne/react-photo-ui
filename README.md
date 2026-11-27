@@ -8,7 +8,7 @@ The design system of three desktop apps for photographers, PhotoMatch, PhotoDev 
 
 Its first look, Graphite, is dense and quiet, in the line of the photo apps professionals use, so that the photos come first. Each app may set its own palette over the same controls.
 
-**Status:** the package, its gallery page and its tokens are built, Graphite dark and light, every pair of text and background checked at 4.5:1 contrast or more (plan steps 1.1 and 1.2); the icons and the controls come next. Its companion for the apps' cores is [`rust-photo-library`](https://github.com/fkuhne/rust-photo-library).
+**Status:** the tokens, Graphite dark and light, every pair of text and background checked at 4.5:1 contrast or more, the icons, and a site to browse them are built (plan steps 1.1 to 1.4); the controls come next. To browse it: `npm install`, then `npm run dev`, at http://localhost:5180. Its companion for the apps' cores is [`rust-photo-library`](https://github.com/fkuhne/rust-photo-library).
 
 ## Where to start
 
@@ -31,7 +31,7 @@ Licensed under either of
 
 at your option.
 
-Lucide's icons, when they arrive, keep their own ISC licence, beside them.
+Lucide's icons keep their own ISC licence, some derived from Feather under MIT: [`icons/lucide/LICENSE`](icons/lucide/LICENSE), and `LICENSE-LUCIDE` beside the built files.
 
 ## Contribution
 
