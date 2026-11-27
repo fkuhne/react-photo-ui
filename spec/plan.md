@@ -53,7 +53,9 @@ PhotoMatch's plan step 2.88. Each family on its page of the site, in every theme
 - [x] 2.3 Segmented choices, sliders and switches.
 
   Done on 2026-11-27 ([0011](decisions/0011-a-knob-colour-for-switches-and-sliders.md) accepted): `ToggleButton`, `Segmented`, joined or apart, `Switch`, `Checkbox`, `RadioGroup` and `Slider`, its value in a box beside it, on React Aria's; a switch where a setting takes effect at once, as Microsoft's guidelines ask, a checkbox for any of a list, as both Apple's and Microsoft's do. On the site's Choices page. See [`docs/package.md`](../docs/package.md#step-23-the-choices).
-- [ ] 2.4 Popovers, menus, tooltips, dialogs and messages.
+- [x] 2.4 Popovers, menus, tooltips, dialogs and messages.
+
+  Done on 2026-11-27: `Dialog` and `DialogTitle`, on React Aria's `ModalOverlay`, `Modal` and `Dialog`, focus kept inside while open, a click on the scrim closing it, Esc too unless the app's keys handle it (`isKeyboardDismissDisabled`); the message, `.pu-message`, a popover with its words and an action; the popover from step 2.1. The menus stay each system's (PhotoMatch's record 0075), and the tooltips too (its record 0074). On the site's Popovers page. See [`docs/package.md`](../docs/package.md#step-24-dialogs-and-messages).
 - [ ] 2.5 Panels, lists, the folder tree and the tags field.
 
 Version 1 is done when PhotoMatch's controls are all the design system's.

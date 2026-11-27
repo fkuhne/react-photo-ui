@@ -25,3 +25,4 @@ export {
   type SwitchProps,
   type ToggleButtonProps,
 } from "./Choices";
+export { Dialog, DialogTitle, type DialogProps } from "./Dialog";

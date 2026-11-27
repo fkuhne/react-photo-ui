@@ -2,7 +2,7 @@
 // built in phase 2 or still to come. Each reads the built tokens, contrast and icons, so that it shows what the package holds.
 import { useState, type ReactNode } from "react";
 import { ListBox, ListBoxItem, type Key } from "react-aria-components";
-import { Button, Checkbox, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, ToggleButton, type IconName } from "../src";
+import { Button, Checkbox, Dialog, DialogTitle, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, ToggleButton, type IconName } from "../src";
 import tokenTable from "../dist/tokens.json";
 import contrastTable from "../dist/contrast.json";
 
@@ -46,7 +46,7 @@ export function Overview() {
             <strong>Icons:</strong> {ICON_NAMES.length} of Lucide's, {LUCIDE_VERSION}, drawn by one component at the tokens' size and line.
           </li>
           <li>
-            <strong>Controls:</strong> buttons, fields, choices, popovers, panels and lists, on React Aria Components, accessible and with a desktop app's keys. Buttons, the dropdown and the choices are here; the rest come in the plan's phase 2.
+            <strong>Controls:</strong> buttons, fields, choices, popovers, panels and lists, on React Aria Components, accessible and with a desktop app's keys. Buttons, the dropdown, the choices and the dialog are here; the rest come in the plan's phase 2.
           </li>
         </ul>
       </div>
@@ -467,6 +467,78 @@ import { Segmented, Slider, Switch } from "photo-ui";
 <Segmented aria-label="Focus peaking" options={[{ id: "low", name: "Low" }, …]} value={level} onChange={setLevel} />
 <Switch isSelected={on} onChange={setOn}>Show each burst as one</Switch>
 <Slider aria-label="Text size" value={size} onChange={setSize} minValue={100} maxValue={200} step={25} format={(v) => \`\${v}%\`} />`}</Code>
+    </Page>
+  );
+}
+
+/** A dialog's look, drawn in place for each theme, as an open one covers the page. */
+function DialogSample() {
+  return (
+    <div className="pu-dialog" style={{ width: "100%", maxWidth: 320 }}>
+      <div className="pu-dialog-frame" style={{ padding: "var(--pu-space-16)", gap: "var(--pu-space-12)" }}>
+        <h3 className="pu-dialog-title">Rename 2 Photos</h3>
+        <p style={{ margin: 0, color: "var(--pu-color-text-quiet)" }}>Each photo's JPEG and sidecar are renamed with it.</p>
+        <div style={{ display: "flex", justifyContent: "flex-end", gap: "var(--pu-space-8)" }}>
+          <Button size="large">Cancel</Button>
+          <Button size="large" variant="accent">
+            Rename
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function OpenDialog() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onPress={() => setOpen(true)}>Open a dialog</Button>
+      {open && (
+        <Dialog onClose={() => setOpen(false)}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "var(--pu-space-12)", padding: "var(--pu-space-16)", width: 360 }}>
+            <DialogTitle>About this dialog</DialogTitle>
+            <p style={{ margin: 0 }}>Focus stays inside it while it's open, and goes back to the button after. A click on the scrim, or Esc, closes it.</p>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <Button size="large" variant="accent" onPress={() => setOpen(false)}>
+                Close
+              </Button>
+            </div>
+          </div>
+        </Dialog>
+      )}
+    </>
+  );
+}
+
+export function Popovers() {
+  return (
+    <Page title="Popovers, dialogs and messages" lead="What floats over the app: a dropdown's list, a dialog over a scrim, a message that comes and goes. The menus are each system's own, and so are the tooltips.">
+      <h2>A dialog</h2>
+      <InThemes>
+        <DialogSample />
+      </InThemes>
+      <div>
+        <OpenDialog />
+      </div>
+      <h2>A message</h2>
+      <InThemes>
+        <span className="pu-message">
+          Picked DSC01310.ARW
+          <Button variant="quiet">Undo</Button>
+        </span>
+      </InThemes>
+      <h2>Keys</h2>
+      <p>A dialog keeps Tab inside it; Esc closes it, unless the app's own keys handle Esc, as PhotoMatch's do. The buttons in its foot follow each system: the default last on a Mac, first on Windows.</p>
+      <Code>{`
+import { Dialog, DialogTitle } from "photo-ui";
+
+{open && (
+  <Dialog onClose={() => setOpen(false)} isKeyboardDismissDisabled className="rename-panel">
+    <DialogTitle>Rename 2 Photos</DialogTitle>
+    …
+  </Dialog>
+)}`}</Code>
     </Page>
   );
 }
