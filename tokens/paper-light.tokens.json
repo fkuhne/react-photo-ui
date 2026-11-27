@@ -135,6 +135,10 @@
       "$value": "{palette.grey.100}",
       "$description": "Text and marks over a photo, on a scrim, the same in every theme"
     },
+    "knob": {
+      "$value": "{palette.grey.100}",
+      "$description": "A switch's knob and a slider's thumb, light in every theme"
+    },
     "scrim": {
       "$value": "{palette.black.72}",
       "$description": "Behind text over a photo"

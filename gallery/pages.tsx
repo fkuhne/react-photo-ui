@@ -2,7 +2,7 @@
 // built in phase 2 or still to come. Each reads the built tokens, contrast and icons, so that it shows what the package holds.
 import { useState, type ReactNode } from "react";
 import { ListBox, ListBoxItem, type Key } from "react-aria-components";
-import { Button, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Select, type IconName } from "../src";
+import { Button, Checkbox, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, ToggleButton, type IconName } from "../src";
 import tokenTable from "../dist/tokens.json";
 import contrastTable from "../dist/contrast.json";
 
@@ -46,7 +46,7 @@ export function Overview() {
             <strong>Icons:</strong> {ICON_NAMES.length} of Lucide's, {LUCIDE_VERSION}, drawn by one component at the tokens' size and line.
           </li>
           <li>
-            <strong>Controls:</strong> buttons, fields, choices, popovers, panels and lists, on React Aria Components, accessible and with a desktop app's keys. Buttons and the dropdown are here; the rest come in the plan's phase 2.
+            <strong>Controls:</strong> buttons, fields, choices, popovers, panels and lists, on React Aria Components, accessible and with a desktop app's keys. Buttons, the dropdown and the choices are here; the rest come in the plan's phase 2.
           </li>
         </ul>
       </div>
@@ -396,6 +396,77 @@ export function Fields() {
 import { Select } from "photo-ui";
 
 <Select aria-label="Sort by" options={[{ id: "captureTime", name: "Capture time" }, …]} value={sort} onChange={setSort} />`}</Code>
+    </Page>
+  );
+}
+
+function ChoicesExamples() {
+  const [level, setLevel] = useState<Key>("mid");
+  const [colour, setColour] = useState<Key>("green");
+  const [advance, setAdvance] = useState(false);
+  const [bursts, setBursts] = useState(true);
+  const [gap, setGap] = useState(4);
+  const [peaking, setPeaking] = useState(true);
+  const [cameras, setCameras] = useState(["ILCE-7M4"]);
+  const swatch = (c: string) => <span style={{ width: 10, height: 10, borderRadius: "var(--pu-radius-full)", background: c }} />;
+  return (
+    <>
+      <Segmented aria-label="Focus peaking" options={[{ id: "low", name: "Low" }, { id: "mid", name: "Mid" }, { id: "high", name: "High" }]} value={level} onChange={setLevel} />
+      <Segmented
+        aria-label="Its colour"
+        look="apart"
+        options={[
+          { id: "green", name: <>{swatch("var(--pu-color-label-green)")}Green</> , label: "Green" },
+          { id: "yellow", name: <>{swatch("var(--pu-color-label-yellow)")}Yellow</>, label: "Yellow" },
+          { id: "red", name: <>{swatch("var(--pu-color-label-red)")}Red</>, label: "Red" },
+        ]}
+        value={colour}
+        onChange={setColour}
+      />
+      <Switch isSelected={advance} onChange={setAdvance}>
+        Move on to the next photo after rating one
+      </Switch>
+      <Switch isSelected={bursts} onChange={setBursts}>
+        Show each burst as one
+      </Switch>
+      <div style={{ width: 240 }}>
+        <Slider aria-label="Burst gap" value={gap} onChange={setGap} minValue={0} maxValue={9} format={(i) => `${[0.1, 0.2, 0.3, 0.5, 1, 2, 3, 5, 7, 10][i]} s`} />
+      </div>
+      <div className="example-row">
+        <ToggleButton icon="focus" aria-label="Focus peaking" title="Focus peaking (F)" isSelected={peaking} onChange={setPeaking} />
+        <ToggleButton variant="quiet" icon="panel-left" aria-label="Folders" isSelected />
+        <ToggleButton variant="quiet" icon="panel-right" aria-label="Tools" />
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "var(--pu-space-4)" }}>
+        {["ILCE-7M4", "ILCE-1", "Nikon Z 8"].map((camera) => (
+          <Checkbox key={camera} isSelected={cameras.includes(camera)} onChange={(on) => setCameras(on ? [...cameras, camera] : cameras.filter((c) => c !== camera))}>
+            {camera}
+          </Checkbox>
+        ))}
+      </div>
+    </>
+  );
+}
+
+export function Choices() {
+  return (
+    <Page title="Choices, sliders and switches" lead="A segmented choice for one of a few, side by side; a switch for a setting that takes effect at once; a checkbox for any of a list; a slider for a value along a range, its reading beside it; a button that stays pressed.">
+      <InThemes>
+        <ChoicesExamples />
+      </InThemes>
+      <h2>Which to use</h2>
+      <p>
+        A switch where a setting takes effect at once, as Microsoft's guidelines ask and as Graphite draws Settings; a checkbox for a list of which
+        any may be ticked, as both Apple's and Microsoft's do. A segmented choice for up to five or so; more go in a dropdown.
+      </p>
+      <h2>Keys</h2>
+      <p>Tab reaches each; the arrows move between a segmented choice's segments and a slider's steps; Space turns a switch or a checkbox, or presses a toggle.</p>
+      <Code>{`
+import { Segmented, Slider, Switch } from "photo-ui";
+
+<Segmented aria-label="Focus peaking" options={[{ id: "low", name: "Low" }, …]} value={level} onChange={setLevel} />
+<Switch isSelected={on} onChange={setOn}>Show each burst as one</Switch>
+<Slider aria-label="Text size" value={size} onChange={setSize} minValue={100} maxValue={200} step={25} format={(v) => \`\${v}%\`} />`}</Code>
     </Page>
   );
 }

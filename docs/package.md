@@ -91,6 +91,19 @@ On 2026-11-27, PhotoMatch's plan step 2.88, its first family, the owner's order:
 - **`npm run make`:** `dist/` 75,342 bytes, 11,273 gzipped, from 65,060 and 10,695.
 - **Drawn in WebKit** by `scripts/snapshot.swift`, the site's Buttons and Fields pages, dark and light: each kind in the three palettes, the turned-off ones faded, the dropdown's list with its tick.
 
+## Step 2.3: the choices
+
+On 2026-11-27, PhotoMatch's plan step 2.88, its second family ([0004](../spec/decisions/0004-the-controls-built-on-react-aria-components.md), [0011](../spec/decisions/0011-a-knob-colour-for-switches-and-sliders.md)).
+
+- **`ToggleButton`:** React Aria's, `plain` or `quiet`, pressed while `isSelected`; standalone, it says so by `aria-pressed`.
+- **`Segmented`:** React Aria's `ToggleButtonGroup`, one choice always on, a `radiogroup` of `radio`s with `aria-checked` (its `useToggleButtonGroup`, 1.22.1); `joined`, one control, or `apart`, each a button, as the canvas draws colours. Each option may carry `data-*` attributes, for an app's checks.
+- **`Switch`, `Checkbox`, `RadioGroup`:** React Aria's, each with its hidden input, `checkbox` or `radio`, inside the `label` that carries the app's `data-*`; a switch 28 by 16 px, a box and a circle of 14 px, in the accent while on.
+- **`Slider`:** React Aria's, its track a 2 px line with the accent up to a 12 px thumb, its value in a box beside it, as Apple's and Microsoft's guidelines suggest; its hidden input a `range`, its `min` and `max` set.
+- **Which to use,** read on 2026-11-27: Apple's Toggles (changed 2024-03-29), "To present a single setting that can be on or off, prefer a checkbox" and "Prefer a switch for settings that you want to emphasize"; Microsoft's Toggle switches (updated 2026-09-21), "Use a toggle switch for binary settings when changes become effective immediately"; both, a checkbox for any combination of a list. PhotoMatch's settings take effect at once and the canvas draws switches: switches there. Apple's Sliders and Microsoft's Slider: the value beside the slider; Apple's Segmented controls: "no more than about five to seven segments".
+- **`color.knob`,** a light knob in every theme ([0011](../spec/decisions/0011-a-knob-colour-for-switches-and-sliders.md)).
+- **`npm run make`:** `dist/` 92,901 bytes, 18,532 gzipped by the sum of each file's, the build's own count.
+- **Drawn in WebKit,** the Choices page, dark and light: each control in the three palettes, the knobs light in each.
+
 ## Commands
 
 ```sh

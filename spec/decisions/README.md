@@ -31,3 +31,4 @@ Don't rewrite a record to change its decision. Write a new record and mark the o
 | [0008](0008-a-site-of-its-own-to-browse-the-design-system.md) | A site of its own to browse the design system | Accepted | 2026-11-27 |
 | [0009](0009-the-site-on-github-pages-published-by-hand.md) | The site on GitHub Pages, published by hand | Accepted | 2026-11-27 |
 | [0010](0010-two-more-type-sizes-space-24-and-32-a-round-corner-and-colours-for-photos-and-errors.md) | Two more type sizes, space 24 and 32, a round corner, and colours for photos and errors | Accepted | 2026-11-27 |
+| [0011](0011-a-knob-colour-for-switches-and-sliders.md) | A knob colour for switches and sliders | Accepted | 2026-11-27 |

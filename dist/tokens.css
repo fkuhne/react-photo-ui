@@ -63,6 +63,7 @@
   --pu-color-label-blue: #539bf5;
   --pu-color-backdrop: #111112;
   --pu-color-on-photo: #ffffff;
+  --pu-color-knob: #e4e4e7;
   --pu-color-scrim: rgb(0 0 0 / 0.72);
   --pu-color-scrim-soft: rgb(0 0 0 / 0.45);
   --pu-color-error: #ff8a80;
@@ -94,6 +95,7 @@
   --pu-color-label-blue: #2f7de0;
   --pu-color-backdrop: #e9e9ec;
   --pu-color-on-photo: #ffffff;
+  --pu-color-knob: #ffffff;
   --pu-color-scrim: rgb(0 0 0 / 0.72);
   --pu-color-scrim-soft: rgb(0 0 0 / 0.45);
   --pu-color-error: #b12424;
@@ -126,6 +128,7 @@
     --pu-color-label-blue: #2f7de0;
     --pu-color-backdrop: #e9e9ec;
     --pu-color-on-photo: #ffffff;
+    --pu-color-knob: #ffffff;
     --pu-color-scrim: rgb(0 0 0 / 0.72);
     --pu-color-scrim-soft: rgb(0 0 0 / 0.45);
     --pu-color-error: #b12424;
@@ -158,6 +161,7 @@
   --pu-color-label-blue: #2f7de0;
   --pu-color-backdrop: #d8d3c8;
   --pu-color-on-photo: #ffffff;
+  --pu-color-knob: #ffffff;
   --pu-color-scrim: rgb(0 0 0 / 0.72);
   --pu-color-scrim-soft: rgb(0 0 0 / 0.45);
   --pu-color-error: #b12424;

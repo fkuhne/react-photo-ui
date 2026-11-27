@@ -4,7 +4,7 @@
 import { StrictMode, useEffect, useMemo, useState, type ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import { Icon, PHOTO_UI_VERSION, type IconName } from "../src";
-import { Buttons, Colour, Depth, Fields, Icons, Overview, Planned, Space, Type } from "./pages";
+import { Buttons, Choices, Colour, Depth, Fields, Icons, Overview, Planned, Space, Type } from "./pages";
 import "../dist/tokens.css";
 import "../dist/controls.css";
 import "./site.css";
@@ -27,7 +27,7 @@ const ROUTES: Route[] = [
   { path: "icons", title: "Icons", icon: "star", section: "Icons", page: (query) => <Icons query={query} /> },
   { path: "controls/buttons", title: "Buttons", icon: "plus", section: "Controls", page: () => <Buttons /> },
   { path: "controls/fields", title: "Fields and dropdowns", icon: "search", section: "Controls", page: () => <Fields /> },
-  { path: "controls/choices", title: "Choices, sliders, switches", icon: "sliders-horizontal", section: "Controls", soon: "2.3", page: () => <Planned title="Choices, sliders and switches" what="Segmented choices, sliders and switches." step="2.3" /> },
+  { path: "controls/choices", title: "Choices, sliders, switches", icon: "sliders-horizontal", section: "Controls", page: () => <Choices /> },
   { path: "controls/popovers", title: "Popovers and menus", icon: "chevron-down", section: "Controls", soon: "2.4", page: () => <Planned title="Popovers, menus, tooltips, dialogs and messages" what="What floats over the app: popovers, menus, tooltips, dialogs and messages." step="2.4" /> },
   { path: "controls/panels", title: "Panels and lists", icon: "panel-left", section: "Controls", soon: "2.5", page: () => <Planned title="Panels, lists, the folder tree and the tags field" what="Panels, lists, the folder tree and the tags field." step="2.5" /> },
 ];

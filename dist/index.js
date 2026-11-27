@@ -7,3 +7,4 @@ export { Icon } from "./Icon";
 export { ICON_NAMES, LUCIDE_VERSION } from "./icon-data";
 export { Button } from "./Button";
 export { Select } from "./Select";
+export { Checkbox, RadioGroup, Segmented, Slider, Switch, ToggleButton, } from "./Choices";

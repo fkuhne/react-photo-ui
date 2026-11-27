@@ -225,3 +225,344 @@
 .pu-listbox-item[data-disabled] {
   color: var(--pu-color-text-quiet);
 }
+
+/* A button that stays pressed (plan step 2.3): plain, like a button, or quiet, as a bar's. */
+.pu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pu-space-6);
+  min-height: var(--pu-size-control);
+  padding: 0 var(--pu-space-8);
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+  background: var(--pu-color-control);
+  color: var(--pu-color-text-quiet);
+  font: inherit;
+  font-size: var(--pu-font-size-text);
+  line-height: var(--pu-font-line-text);
+  white-space: nowrap;
+  cursor: default;
+  outline: none;
+}
+
+.pu-toggle[data-hovered] {
+  color: var(--pu-color-text);
+}
+
+.pu-toggle[data-selected] {
+  border-color: var(--pu-color-text-quiet);
+  background: var(--pu-color-pressed);
+  color: var(--pu-color-text);
+}
+
+.pu-toggle--quiet {
+  border-color: transparent;
+  background: transparent;
+}
+
+.pu-toggle--quiet[data-hovered] {
+  background: var(--pu-color-control);
+}
+
+.pu-toggle--quiet[data-selected] {
+  border-color: transparent;
+  background: var(--pu-color-chip);
+}
+
+.pu-toggle--icon {
+  width: var(--pu-size-control);
+  padding: 0;
+}
+
+.pu-toggle[data-disabled] {
+  opacity: 0.4;
+}
+
+/* A segmented choice: one control, its segments joined; or apart, each a button of its own. */
+.pu-segmented {
+  display: inline-flex;
+  min-width: 0;
+}
+
+.pu-segment {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pu-space-6);
+  min-height: var(--pu-size-control);
+  padding: 0 var(--pu-space-10);
+  border: 0;
+  background: transparent;
+  color: var(--pu-color-text-quiet);
+  font: inherit;
+  font-size: var(--pu-font-size-text);
+  line-height: var(--pu-font-line-text);
+  white-space: nowrap;
+  cursor: default;
+  outline: none;
+}
+
+.pu-segment[data-hovered] {
+  color: var(--pu-color-text);
+}
+
+.pu-segment[data-selected] {
+  background: var(--pu-color-pressed);
+  color: var(--pu-color-text);
+}
+
+.pu-segmented--joined {
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+  overflow: hidden;
+}
+
+.pu-segmented--joined .pu-segment {
+  min-height: calc(var(--pu-size-control) - 2px);
+}
+
+.pu-segmented--joined .pu-segment + .pu-segment {
+  border-left: 1px solid var(--pu-color-edge);
+}
+
+.pu-segmented--apart {
+  flex-wrap: wrap;
+  gap: var(--pu-space-4);
+}
+
+.pu-segmented--apart .pu-segment {
+  flex: none;
+  padding: 0 var(--pu-space-8);
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+}
+
+.pu-segmented--apart .pu-segment[data-selected] {
+  border-color: var(--pu-color-text-quiet);
+  background: var(--pu-color-chip);
+}
+
+.pu-toggle[data-focus-visible],
+.pu-segment[data-focus-visible] {
+  outline: 2px solid var(--pu-color-accent);
+  outline-offset: -2px;
+}
+
+/* A switch: a track 28 by 16 px, its knob at the end that's on, in the accent while on. */
+.pu-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pu-space-8);
+  color: var(--pu-color-text);
+  font-size: var(--pu-font-size-text);
+  line-height: var(--pu-font-line-text);
+  cursor: default;
+}
+
+.pu-switch-track {
+  position: relative;
+  flex: none;
+  width: 28px;
+  height: 16px;
+  border-radius: var(--pu-radius-full);
+  background: var(--pu-color-edge);
+  transition: background-color 120ms;
+}
+
+.pu-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--pu-radius-full);
+  background: var(--pu-color-knob);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+  transition: transform 120ms;
+}
+
+.pu-switch[data-selected] .pu-switch-track {
+  background: var(--pu-color-accent);
+}
+
+.pu-switch[data-selected] .pu-switch-knob {
+  transform: translateX(12px);
+  background: var(--pu-color-on-accent);
+}
+
+.pu-switch[data-focus-visible] .pu-switch-track {
+  outline: 2px solid var(--pu-color-accent);
+  outline-offset: 2px;
+}
+
+.pu-switch[data-disabled] {
+  opacity: 0.4;
+}
+
+/* A checkbox: a box of 14 px, the accent with its tick while ticked. */
+.pu-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pu-space-6);
+  min-width: 0;
+  color: var(--pu-color-text);
+  cursor: default;
+}
+
+.pu-checkbox-box {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+  background: var(--pu-color-field);
+  color: var(--pu-color-on-accent);
+  --pu-icon-size: 12px;
+  --pu-icon-stroke: 2px;
+}
+
+.pu-checkbox[data-hovered] .pu-checkbox-box {
+  border-color: var(--pu-color-text-quiet);
+}
+
+.pu-checkbox[data-selected] .pu-checkbox-box,
+.pu-checkbox[data-indeterminate] .pu-checkbox-box {
+  border-color: var(--pu-color-accent);
+  background: var(--pu-color-accent);
+}
+
+.pu-checkbox[data-focus-visible] .pu-checkbox-box {
+  outline: 2px solid var(--pu-color-accent);
+  outline-offset: 1px;
+}
+
+.pu-checkbox[data-disabled] {
+  opacity: 0.4;
+}
+
+/* A slider: a line with the accent up to its thumb, its value in a box beside it. */
+.pu-slider {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pu-space-12);
+  min-width: 0;
+}
+
+.pu-slider-label {
+  flex-basis: 100%;
+  color: var(--pu-color-text-quiet);
+}
+
+.pu-slider-track {
+  position: relative;
+  flex: 1;
+  min-width: 120px;
+  height: 16px;
+}
+
+.pu-slider-track::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--pu-color-edge);
+}
+
+.pu-slider-fill {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--pu-color-accent);
+}
+
+.pu-slider-thumb {
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--pu-radius-full);
+  background: var(--pu-color-knob);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.5);
+}
+
+.pu-slider-thumb[data-dragging] {
+  background: var(--pu-color-accent);
+}
+
+.pu-slider-thumb[data-focus-visible] {
+  outline: 2px solid var(--pu-color-accent);
+  outline-offset: 2px;
+}
+
+.pu-slider-output {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: var(--pu-size-menu-row);
+  padding: 0 var(--pu-space-6);
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+  font-variant-numeric: tabular-nums;
+}
+
+.pu-slider[data-disabled] {
+  opacity: 0.4;
+}
+
+/* Radio buttons: a circle of 14 px, the accent with a ring of the field's ground while chosen. */
+.pu-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pu-space-8) var(--pu-space-16);
+}
+
+.pu-radio-group-label {
+  font-weight: var(--pu-font-weight-strong);
+}
+
+.pu-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pu-space-6);
+  color: var(--pu-color-text);
+  cursor: default;
+}
+
+.pu-radio-circle {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-full);
+  background: var(--pu-color-field);
+}
+
+.pu-radio[data-hovered] .pu-radio-circle {
+  border-color: var(--pu-color-text-quiet);
+}
+
+.pu-radio[data-selected] .pu-radio-circle {
+  border-color: var(--pu-color-accent);
+  background: var(--pu-color-accent);
+  box-shadow: inset 0 0 0 3px var(--pu-color-field);
+}
+
+.pu-radio[data-focus-visible] .pu-radio-circle {
+  outline: 2px solid var(--pu-color-accent);
+  outline-offset: 1px;
+}
+
+.pu-radio[data-disabled] {
+  opacity: 0.4;
+}

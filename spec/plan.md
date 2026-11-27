@@ -50,7 +50,9 @@ PhotoMatch's plan step 2.88. Each family on its page of the site, in every theme
 
   Done on 2026-11-27 ([0004](decisions/0004-the-controls-built-on-react-aria-components.md) accepted): `Button` and `Select` on React Aria's, drawn by `controls.css` from the tokens and React Aria's data attributes alone; on the site's Buttons and Fields pages, in each palette. PhotoMatch takes them in its step 2.88, its self-check passing. See [`docs/package.md`](../docs/package.md#step-21-buttons-and-the-dropdown).
 - [ ] 2.2 Fields: a text field and a field that suggests as one types.
-- [ ] 2.3 Segmented choices, sliders and switches.
+- [x] 2.3 Segmented choices, sliders and switches.
+
+  Done on 2026-11-27 ([0011](decisions/0011-a-knob-colour-for-switches-and-sliders.md) accepted): `ToggleButton`, `Segmented`, joined or apart, `Switch`, `Checkbox`, `RadioGroup` and `Slider`, its value in a box beside it, on React Aria's; a switch where a setting takes effect at once, as Microsoft's guidelines ask, a checkbox for any of a list, as both Apple's and Microsoft's do. On the site's Choices page. See [`docs/package.md`](../docs/package.md#step-23-the-choices).
 - [ ] 2.4 Popovers, menus, tooltips, dialogs and messages.
 - [ ] 2.5 Panels, lists, the folder tree and the tags field.
 
