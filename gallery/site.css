@@ -336,3 +336,39 @@ pre {
     display: none;
   }
 }
+
+/* A control's examples in each theme, side by side (phase 2). */
+.in-themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--pu-space-12);
+}
+
+.in-theme {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--pu-space-12);
+  padding: var(--pu-space-16);
+  border: 1px solid var(--pu-color-line);
+  border-radius: var(--pu-radius-dialog);
+  background: var(--pu-color-panel);
+  color: var(--pu-color-text);
+  font-size: var(--pu-font-size-text);
+  line-height: var(--pu-font-line-text);
+}
+
+.in-theme-name {
+  font-size: var(--pu-font-size-caption);
+  font-weight: var(--pu-font-weight-strong);
+  letter-spacing: var(--pu-font-tracking-label);
+  text-transform: uppercase;
+  color: var(--pu-color-text-quiet);
+}
+
+.example-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pu-space-8);
+}

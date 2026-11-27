@@ -4,8 +4,9 @@
 import { StrictMode, useEffect, useMemo, useState, type ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import { Icon, PHOTO_UI_VERSION, type IconName } from "../src";
-import { Colour, Depth, Icons, Overview, Planned, Space, Type } from "./pages";
+import { Buttons, Colour, Depth, Fields, Icons, Overview, Planned, Space, Type } from "./pages";
 import "../dist/tokens.css";
+import "../dist/controls.css";
 import "./site.css";
 
 interface Route {
@@ -24,8 +25,8 @@ const ROUTES: Route[] = [
   { path: "foundations/space", title: "Space and size", icon: "columns-2", section: "Foundations", page: () => <Space /> },
   { path: "foundations/depth", title: "Corners and depth", icon: "layers", section: "Foundations", page: () => <Depth /> },
   { path: "icons", title: "Icons", icon: "star", section: "Icons", page: (query) => <Icons query={query} /> },
-  { path: "controls/buttons", title: "Buttons", icon: "plus", section: "Controls", soon: "2.1", page: () => <Planned title="Buttons" what="The accented, the plain, the quiet and the icon-only, pressed and turned off." step="2.1" /> },
-  { path: "controls/fields", title: "Fields and dropdowns", icon: "search", section: "Controls", soon: "2.2", page: () => <Planned title="Fields and dropdowns" what="A text field, a field that suggests as one types, and a dropdown." step="2.2" /> },
+  { path: "controls/buttons", title: "Buttons", icon: "plus", section: "Controls", page: () => <Buttons /> },
+  { path: "controls/fields", title: "Fields and dropdowns", icon: "search", section: "Controls", page: () => <Fields /> },
   { path: "controls/choices", title: "Choices, sliders, switches", icon: "sliders-horizontal", section: "Controls", soon: "2.3", page: () => <Planned title="Choices, sliders and switches" what="Segmented choices, sliders and switches." step="2.3" /> },
   { path: "controls/popovers", title: "Popovers and menus", icon: "chevron-down", section: "Controls", soon: "2.4", page: () => <Planned title="Popovers, menus, tooltips, dialogs and messages" what="What floats over the app: popovers, menus, tooltips, dialogs and messages." step="2.4" /> },
   { path: "controls/panels", title: "Panels and lists", icon: "panel-left", section: "Controls", soon: "2.5", page: () => <Planned title="Panels, lists, the folder tree and the tags field" what="Panels, lists, the folder tree and the tags field." step="2.5" /> },

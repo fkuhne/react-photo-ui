@@ -18,6 +18,7 @@
       "default": "./dist/index.js"
     },
     "./tokens.css": "./dist/tokens.css",
+    "./controls.css": "./dist/controls.css",
     "./tokens.json": "./dist/tokens.json",
     "./package.json": "./package.json"
   },

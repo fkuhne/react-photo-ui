@@ -80,6 +80,17 @@ On 2026-11-27, for PhotoMatch's plan step 2.87, from a count of its `App.css`: 1
 - **The check found** PhotoMatch's light error red, `#c62828`, at 3.88:1 on Graphite light's canvas, and 4.39:1 on paper's. The lightest red of its hue at 4.6:1 or more on every light surface, by stepping its lightness down by 1%, is `#b12424`.
 - **`npm run make`:** 69 pairs, all 4.5:1 or more; the closest, the light error red on the canvas, 4.60:1. `dist/` 65,060 bytes, 10,695 gzipped.
 
+## Step 2.1: buttons and the dropdown
+
+On 2026-11-27, PhotoMatch's plan step 2.88, its first family, the owner's order: the most seen first ([0004](../spec/decisions/0004-the-controls-built-on-react-aria-components.md)).
+
+- **`Button`:** React Aria's `Button` as `variant` `accent`, `plain` or `quiet`, `size` `large` for a dialog's foot, 26 px, else 24; an `icon`, before the text or alone, named then by `aria-label`. React Aria's `filterDOMProps` passes no `title` in 1.22.1, so `Button` sets it on the element itself, the system's tooltip, until the overlays' step.
+- **`Select`:** React Aria's `Select` with `value` and `onChange`, its `selectedKey` deprecated in 1.22.1; its button shows the choice and a chevron, its list a `ListBox` in a `Popover` at least as wide as the button, `--trigger-width`, rows 22 px, the focused one in the accent, the chosen one ticked. Each option carries `data-key`, its id, from React Aria's `useSelectableItem`.
+- **`controls.css`:** every colour, size, space and corner from the tokens; the states from React Aria's data attributes, `data-hovered`, `data-pressed`, `data-focus-visible`, `data-disabled`, `data-open`, `data-focused`, `data-selected`. Exported as `photo-ui/controls.css`, loaded after the tokens.
+- **Read on 2026-11-27:** React Aria's Styling, Select, Slider, Switch, ToggleButtonGroup and Testing pages, now at react-aria.adobe.com, with no dates; and its 1.22.1 code for what they leave out: `usePress` takes `element.click()` as a press, "as if it were a keyboard click"; the slider's hidden input is a `range`, the switch's a `checkbox`; its overlays always give focus back, `restoreFocus`.
+- **`npm run make`:** `dist/` 75,342 bytes, 11,273 gzipped, from 65,060 and 10,695.
+- **Drawn in WebKit** by `scripts/snapshot.swift`, the site's Buttons and Fields pages, dark and light: each kind in the three palettes, the turned-off ones faded, the dropdown's list with its tick.
+
 ## Commands
 
 ```sh

@@ -1,0 +1,227 @@
+/* photo-ui's controls (phase 2, record 0004), drawn from the tokens alone: React Aria's states come
+   as data attributes, data-hovered, data-pressed, data-focus-visible, data-disabled, data-open,
+   data-focused and data-selected, the same with a mouse, a touch or the keys. An app loads this
+   after `photo-ui/tokens.css`. */
+
+/* Buttons (plan step 2.1): accented, plain and quiet, 24 px high, 26 in a dialog's foot. */
+.pu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pu-space-6);
+  min-height: var(--pu-size-control);
+  padding: 0 var(--pu-space-12);
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+  background: var(--pu-color-control);
+  color: var(--pu-color-text);
+  font: inherit;
+  font-size: var(--pu-font-size-text);
+  line-height: var(--pu-font-line-text);
+  white-space: nowrap;
+  cursor: default;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pu-button[data-hovered] {
+  background: var(--pu-color-chip);
+}
+
+.pu-button[data-pressed] {
+  background: var(--pu-color-pressed);
+}
+
+.pu-button--large {
+  min-height: var(--pu-size-control-large);
+  padding: 0 var(--pu-space-16);
+}
+
+.pu-button--accent {
+  border-color: var(--pu-color-accent);
+  background: var(--pu-color-accent);
+  color: var(--pu-color-on-accent);
+  font-weight: var(--pu-font-weight-strong);
+}
+
+.pu-button--accent[data-hovered] {
+  background: color-mix(in srgb, var(--pu-color-accent) 88%, var(--pu-color-text));
+}
+
+.pu-button--accent[data-pressed] {
+  background: color-mix(in srgb, var(--pu-color-accent) 85%, var(--pu-color-canvas));
+}
+
+.pu-button--quiet {
+  padding: 0 var(--pu-space-8);
+  border-color: transparent;
+  background: transparent;
+  color: var(--pu-color-accent-text);
+}
+
+.pu-button--quiet[data-hovered] {
+  background: var(--pu-color-control);
+}
+
+.pu-button--quiet[data-pressed] {
+  background: var(--pu-color-pressed);
+}
+
+/* An icon alone: square, and quiet ones in the text's colour, as they sit in a panel's header. */
+.pu-button--icon {
+  width: var(--pu-size-control);
+  padding: 0;
+}
+
+.pu-button--icon.pu-button--large {
+  width: var(--pu-size-control-large);
+}
+
+.pu-button--quiet.pu-button--icon {
+  color: var(--pu-color-text-quiet);
+}
+
+.pu-button--quiet.pu-button--icon[data-hovered],
+.pu-button--quiet.pu-button--icon[data-pressed] {
+  color: var(--pu-color-text);
+}
+
+.pu-button[data-focus-visible],
+.pu-select-button[data-focus-visible] {
+  outline: 2px solid var(--pu-color-accent);
+  outline-offset: 1px;
+}
+
+.pu-button[data-disabled] {
+  opacity: 0.4;
+}
+
+.pu-button[data-disabled][data-hovered],
+.pu-button[data-disabled][data-pressed] {
+  background: var(--pu-color-control);
+}
+
+.pu-button--accent[data-disabled][data-hovered] {
+  background: var(--pu-color-accent);
+}
+
+.pu-button--quiet[data-disabled][data-hovered] {
+  background: transparent;
+}
+
+/* The dropdown (plan step 2.1): a plain button with the choice and a chevron; its list a popover. */
+.pu-select {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pu-space-8);
+  min-width: 0;
+}
+
+.pu-select-label {
+  color: var(--pu-color-text-quiet);
+  font-size: var(--pu-font-size-text);
+}
+
+.pu-select-button {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pu-space-6);
+  min-width: 0;
+  width: 100%;
+  min-height: var(--pu-size-control);
+  padding: 0 var(--pu-space-6) 0 var(--pu-space-8);
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+  background: var(--pu-color-control);
+  color: var(--pu-color-text);
+  font: inherit;
+  font-size: var(--pu-font-size-text);
+  line-height: var(--pu-font-line-text);
+  text-align: left;
+  cursor: default;
+  outline: none;
+}
+
+.pu-select-button[data-hovered] {
+  background: var(--pu-color-chip);
+}
+
+.pu-select[data-open] .pu-select-button {
+  border-color: var(--pu-color-accent);
+}
+
+.pu-select[data-disabled] .pu-select-button {
+  opacity: 0.4;
+}
+
+.pu-select-value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pu-select-value[data-placeholder] {
+  color: var(--pu-color-text-quiet);
+}
+
+.pu-select-chevron {
+  color: var(--pu-color-text-quiet);
+}
+
+/* What floats over the app: a popover, 5 px corners, its shadow; a list's rows 22 px. */
+.pu-popover {
+  box-sizing: border-box;
+  padding: var(--pu-space-4);
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-popover);
+  background: var(--pu-color-popover);
+  box-shadow: var(--pu-shadow-popover);
+  color: var(--pu-color-text);
+  font-size: var(--pu-font-size-text);
+  line-height: var(--pu-font-line-text);
+  outline: none;
+  overflow: auto;
+}
+
+.pu-select-popover {
+  min-width: var(--trigger-width);
+}
+
+.pu-listbox {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+.pu-listbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pu-space-12);
+  min-height: var(--pu-size-menu-row);
+  padding: 0 var(--pu-space-8);
+  border-radius: var(--pu-radius-control);
+  white-space: nowrap;
+  cursor: default;
+  outline: none;
+}
+
+.pu-listbox-item[data-focused] {
+  background: var(--pu-color-accent);
+  color: var(--pu-color-on-accent);
+}
+
+.pu-listbox-item-check {
+  visibility: hidden;
+}
+
+.pu-listbox-item[data-selected] .pu-listbox-item-check {
+  visibility: visible;
+}
+
+.pu-listbox-item[data-disabled] {
+  color: var(--pu-color-text-quiet);
+}

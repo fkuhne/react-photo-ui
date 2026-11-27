@@ -1,6 +1,6 @@
 # 0004. The controls built on React Aria Components
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-11-27
 
 ## Context
@@ -34,11 +34,12 @@ The app loads from disk, so the sizes weigh little. The owner's pick of 2026-11-
 - **The controls' keys and accessibility come from one library,** kept up by Adobe.
 - **About 68 KB gzipped** more in each app, measured with seven controls.
 - **A larger API to learn** than the other two.
+- **Its overlays always give focus back** to the button that opened them, a frame or more after they close (its `Overlay`, `restoreFocus`, 1.22.1): an app that sends the keys elsewhere after a choice waits for that focus to come back.
 
 ## Assumptions to verify
 
-- [ ] It passes `data-*` attributes to the element it renders, which PhotoMatch's self-check finds controls by: step 2.1.
-- [ ] Its focus and keys work in Tauri's webviews, WebKit on macOS and WebView2 on Windows: steps 2.1 to 2.5.
+- [x] It passes `data-*` attributes to the element it renders, which PhotoMatch's self-check finds controls by: on 2026-11-27, step 2.1, `data-check` and `data-value` on our `Button` and `Select`, PhotoMatch's self-check 381 checks ok on them. It passes no `title`, by its `filterDOMProps` in 1.22.1: our `Button` sets it on the element itself.
+- [ ] Its focus and keys work in Tauri's webviews, WebKit on macOS and WebView2 on Windows: steps 2.1 to 2.5. WebKit: on 2026-11-27, PhotoMatch's self-check presses buttons and chooses in dropdowns by `element.click()`, which React Aria takes as a press, its usePress says. WebView2: at PhotoMatch's next Windows build.
 
 ## Sources
 

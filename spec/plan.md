@@ -46,10 +46,19 @@ PhotoMatch's plan step 2.86.
 
 PhotoMatch's plan step 2.88. Each family on its page of the site, in every theme, its keys checked, then taken by PhotoMatch with its self-check. *Design choices.*
 
-- [ ] 2.1 Buttons: the accented, the plain, the quiet and the icon-only, pressed and turned off.
-- [ ] 2.2 Fields and dropdowns: a text field, a field that suggests as one types, and a dropdown.
+- [x] 2.1 Buttons and the dropdown, the most seen first, PhotoMatch's order of 2026-11-27: the accented, the plain, the quiet and the icon-only button, turned off too; the dropdown and its list.
+
+  Done on 2026-11-27 ([0004](decisions/0004-the-controls-built-on-react-aria-components.md) accepted): `Button` and `Select` on React Aria's, drawn by `controls.css` from the tokens and React Aria's data attributes alone; on the site's Buttons and Fields pages, in each palette. PhotoMatch takes them in its step 2.88, its self-check passing. See [`docs/package.md`](../docs/package.md#step-21-buttons-and-the-dropdown).
+- [ ] 2.2 Fields: a text field and a field that suggests as one types.
 - [ ] 2.3 Segmented choices, sliders and switches.
 - [ ] 2.4 Popovers, menus, tooltips, dialogs and messages.
 - [ ] 2.5 Panels, lists, the folder tree and the tags field.
 
 Version 1 is done when PhotoMatch's controls are all the design system's.
+
+## Phase 3: PhotoDev's controls
+
+From the owner on 2026-11-27: "we should also expand the current design system to other components also, like sliders, color pickers, color sliders/spheres, I mean, the type of component that will be used in PhotoDev (a photo editor). but this is low priority, let's try get PhotoMatch done first, for its basic version". After version 1. *Design choices.*
+
+- [ ] 3.1 An editor's sliders: a value beside each, typed or dragged, a double click back to its default, fine steps with a key held.
+- [ ] 3.2 Colour: a picker, colour sliders, a colour area and wheel, and swatches, on React Aria's colour components (`ColorPicker`, `ColorSlider`, `ColorArea`, `ColorWheel`, `ColorField`, `ColorSwatch`, in 1.22.1).

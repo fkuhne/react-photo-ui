@@ -1,7 +1,8 @@
-// The site's pages (plan step 1.4): the overview, the foundations, the icons, and the controls to
-// come. Each reads the built tokens, contrast and icons, so that it shows what the package holds.
+// The site's pages (plan step 1.4): the overview, the foundations, the icons, and the controls, each
+// built in phase 2 or still to come. Each reads the built tokens, contrast and icons, so that it shows what the package holds.
 import { useState, type ReactNode } from "react";
-import { ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, type IconName } from "../src";
+import { ListBox, ListBoxItem, type Key } from "react-aria-components";
+import { Button, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Select, type IconName } from "../src";
 import tokenTable from "../dist/tokens.json";
 import contrastTable from "../dist/contrast.json";
 
@@ -45,7 +46,7 @@ export function Overview() {
             <strong>Icons:</strong> {ICON_NAMES.length} of Lucide's, {LUCIDE_VERSION}, drawn by one component at the tokens' size and line.
           </li>
           <li>
-            <strong>Controls:</strong> buttons, fields, choices, popovers, panels and lists, on React Aria Components, accessible and with a desktop app's keys. They come in the plan's phase 2.
+            <strong>Controls:</strong> buttons, fields, choices, popovers, panels and lists, on React Aria Components, accessible and with a desktop app's keys. Buttons and the dropdown are here; the rest come in the plan's phase 2.
           </li>
         </ul>
       </div>
@@ -279,6 +280,122 @@ export function Icons({ query }: { query: string }) {
           </button>
         ))}
       </div>
+    </Page>
+  );
+}
+
+/** The same examples in each theme, side by side, each on a panel of its own colours. */
+function InThemes({ children }: { children: ReactNode }) {
+  return (
+    <div className="in-themes">
+      {CONTEXTS.map((c) => (
+        <div key={c.id} className="in-theme" data-theme={c.id === "graphite-dark" ? "dark" : "light"} data-palette={c.id === "paper-light" ? "paper" : undefined}>
+          <span className="in-theme-name">{c.name}</span>
+          {children}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Row({ children }: { children: ReactNode }) {
+  return <div className="example-row">{children}</div>;
+}
+
+export function Buttons() {
+  return (
+    <Page title="Buttons" lead="The accented one is the first choice, a dialog's default; the plain one every other; the quiet one, text in the accent, goes with the text around it. Any of them can hold an icon, or an icon alone, named for a screen reader.">
+      <h2>Kinds</h2>
+      <InThemes>
+        <Row>
+          <Button variant="accent">Move 2 Photos</Button>
+          <Button>Keep Both</Button>
+          <Button>Cancel</Button>
+        </Row>
+        <Row>
+          <Button variant="quiet">Clear All Filters</Button>
+          <Button icon="columns-2" aria-label="Compare" title="Compare (C)" />
+          <Button variant="quiet" icon="plus" aria-label="Open Folder…" title="Open Folder…" />
+          <Button variant="quiet" icon="x" aria-label="Close" />
+        </Row>
+      </InThemes>
+      <h2>In a dialog's foot, 26 px high</h2>
+      <InThemes>
+        <Row>
+          <Button size="large">Cancel</Button>
+          <Button size="large" variant="accent">
+            Rename
+          </Button>
+        </Row>
+      </InThemes>
+      <h2>Turned off</h2>
+      <InThemes>
+        <Row>
+          <Button variant="accent" isDisabled>
+            Rename
+          </Button>
+          <Button isDisabled>Keep Both</Button>
+          <Button variant="quiet" isDisabled>
+            Clear All Filters
+          </Button>
+        </Row>
+      </InThemes>
+      <h2>Keys</h2>
+      <p>Tab reaches a button and shows its ring; Space or Enter presses it. A click, a touch and the keys give the same states, as React Aria's data attributes.</p>
+      <Code>{`
+import "photo-ui/tokens.css";
+import "photo-ui/controls.css";
+import { Button } from "photo-ui";
+
+<Button variant="accent" size="large" onPress={rename}>Rename</Button>
+<Button variant="quiet" icon="plus" aria-label="Open Folder…" title="Open Folder… (⌘O)" onPress={add} />`}</Code>
+    </Page>
+  );
+}
+
+const SORT = [
+  { id: "captureTime", name: "Capture time" },
+  { id: "fileName", name: "File name" },
+  { id: "stars", name: "Stars" },
+  { id: "pick", name: "Pick" },
+];
+
+function SortExample() {
+  const [key, setKey] = useState<Key>("captureTime");
+  return <Select aria-label="Sort by" options={SORT} value={key} onChange={setKey} />;
+}
+
+export function Fields() {
+  return (
+    <Page title="Fields and dropdowns" lead="A dropdown shows the choice made and opens its list in a popover, at least as wide as itself. The text field and the field that suggests as one types come in plan step 2.2.">
+      <h2>The dropdown</h2>
+      <InThemes>
+        <div style={{ width: 180 }}>
+          <SortExample />
+        </div>
+        <div style={{ width: 180 }}>
+          <Select label="Group by" options={[{ id: "none", name: "None" }, { id: "day", name: "Day" }]} value="day" onChange={() => {}} />
+        </div>
+      </InThemes>
+      <h2>Its list, open</h2>
+      <InThemes>
+        <div className="pu-popover" style={{ width: 180 }}>
+          <ListBox className="pu-listbox" aria-label="Sort by" selectionMode="single" defaultSelectedKeys={["fileName"]} items={SORT}>
+            {(option) => (
+              <ListBoxItem id={option.id} textValue={option.name} className="pu-listbox-item">
+                <span className="pu-listbox-item-name">{option.name}</span>
+                <Icon name="check" className="pu-listbox-item-check" />
+              </ListBoxItem>
+            )}
+          </ListBox>
+        </div>
+      </InThemes>
+      <h2>Keys</h2>
+      <p>Space, Enter or ↓ opens the list; the arrows move in it, typing jumps to a choice, Enter takes it and Esc closes it, the choice unchanged.</p>
+      <Code>{`
+import { Select } from "photo-ui";
+
+<Select aria-label="Sort by" options={[{ id: "captureTime", name: "Capture time" }, …]} value={sort} onChange={setSort} />`}</Code>
     </Page>
   );
 }

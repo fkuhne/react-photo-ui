@@ -57,6 +57,7 @@ Its built files are committed, so that a pinned commit is exactly what an app ge
 **Next:**
 - **PhotoDev moved to it,** its copied panels and fields replaced, in Graphite.
 - **PhotoBook moved to it,** with a palette of its own, its warm, paper-like light, over the shared controls: the owner's pick of 2026-11-27, "Shared controls, own palette".
+- **PhotoDev's editing controls,** from the owner on 2026-11-27, low priority, after PhotoMatch's: "we should also expand the current design system to other components also, like sliders, color pickers, color sliders/spheres, I mean, the type of component that will be used in PhotoDev (a photo editor)". An editor's sliders, a colour picker, colour sliders, a colour area and wheel (plan phase 3).
 
 **Later, as ideas:**
 - **Published on npm,** if others come to use it.
