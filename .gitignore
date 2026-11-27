@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+.vite/
+*.tsbuildinfo
+*.log
+# dist/ is kept: the apps pin a commit and take its built files (record 0002).
