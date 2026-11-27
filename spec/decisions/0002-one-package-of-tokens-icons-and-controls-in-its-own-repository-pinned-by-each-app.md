@@ -42,7 +42,7 @@ The owner's picks of 2026-11-27, in PhotoMatch's step 2.86: "go with your recomm
 ## Assumptions to verify
 
 - [ ] `npm ci` in PhotoMatch installs it from a pinned commit over HTTPS, running no script of ours: step 1.4.
-- [ ] The built files stay small: measured in step 1.1.
+- [x] The built files stay small: on 2026-11-27, step 1.1, 447 bytes in `dist/`, 6,211 bytes as npm packs it for an app ([`docs/package.md`](../../docs/package.md#step-11-the-package)); the build named `make`, as a `build` or `prepare` script would run in each app's install.
 
 ## Sources
 

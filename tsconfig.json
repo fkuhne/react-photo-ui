@@ -1,0 +1,21 @@
+{
+  // Type-checks the package and the gallery page, as `npm run check`; PhotoMatch's settings, which
+  // TypeScript 6.0.3 and Vite 8.3.5 already build with.
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src", "gallery", "vite.config.ts"]
+}

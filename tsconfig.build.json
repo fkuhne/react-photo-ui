@@ -1,0 +1,12 @@
+{
+  // The package's own build, `npm run make`: the source in `src/` to JavaScript and type files in
+  // `dist/`, which is committed (record 0002). Imports stay as written, for the apps' bundlers.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src"]
+}

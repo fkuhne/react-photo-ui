@@ -18,7 +18,7 @@ What the project covers is in [`spec/product.md`](spec/product.md). What we know
 2. [`spec/requirements.md`](spec/requirements.md): each requirement, how it's met and how it's verified.
 3. [`spec/plan.md`](spec/plan.md): the steps, in order. The next step is the first unticked one.
 4. [`spec/decisions/README.md`](spec/decisions/README.md): the decision records that touch the step.
-5. [`docs/foundations.md`](docs/foundations.md): the notes, for the sections the step relies on.
+5. [`docs/foundations.md`](docs/foundations.md) and [`docs/package.md`](docs/package.md): the notes, for the sections the step relies on.
 
 ## How we work
 
@@ -43,7 +43,16 @@ What the project covers is in [`spec/product.md`](spec/product.md). What we know
 
 ## Commands
 
-None yet. The package arrives in plan step 1.1, and each step adds its commands here.
+It needs Node 22. How the package is built and why: [`docs/package.md`](docs/package.md).
+
+```sh
+npm install         # once, and after a dependency changes
+npm run dev         # the gallery page, at http://localhost:5180
+npm run check       # type-check the package and the gallery
+npm run make        # build dist/, committed with every change to src/
+```
+
+Never add a script named `build`, `prepare`, `prepack`, `preinstall`, `install` or `postinstall`: npm would run it in each app's install of this git dependency ([0002](spec/decisions/0002-one-package-of-tokens-icons-and-controls-in-its-own-repository-pinned-by-each-app.md)).
 
 ## Conventions
 
