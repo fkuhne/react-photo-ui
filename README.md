@@ -8,7 +8,7 @@ The design system of three desktop apps for photographers, PhotoMatch, PhotoDev 
 
 Its first look, Graphite, is dense and quiet, in the line of the photo apps professionals use, so that the photos come first. Each app may set its own palette over the same controls.
 
-**Status:** the package's skeleton and its gallery page are built (plan step 1.1); the tokens, the icons and the controls come next. Its companion for the apps' cores is [`rust-photo-library`](https://github.com/fkuhne/rust-photo-library).
+**Status:** the package, its gallery page and its tokens are built, Graphite dark and light, every pair of text and background checked at 4.5:1 contrast or more (plan steps 1.1 and 1.2); the icons and the controls come next. Its companion for the apps' cores is [`rust-photo-library`](https://github.com/fkuhne/rust-photo-library).
 
 ## Where to start
 

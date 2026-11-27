@@ -1,0 +1,176 @@
+{
+  "$description": "Graphite, light: PhotoMatch's record 0070",
+  "color": {
+    "$type": "color",
+    "canvas": {
+      "$value": "{palette.grey.85}",
+      "$description": "Behind the photos"
+    },
+    "panel": {
+      "$value": "{palette.grey.93}",
+      "$description": "Panels, the bar below"
+    },
+    "caption": {
+      "$value": "{palette.grey.91}",
+      "$description": "A photo's caption"
+    },
+    "control": {
+      "$value": "{palette.grey.97}",
+      "$description": "Controls"
+    },
+    "field": {
+      "$value": "{palette.grey.100}",
+      "$description": "Fields"
+    },
+    "popover": {
+      "$value": "{palette.grey.100}",
+      "$description": "Popovers and menus"
+    },
+    "line": {
+      "$value": "{palette.grey.80}",
+      "$description": "Lines between panels"
+    },
+    "edge": {
+      "$value": "{palette.grey.73}",
+      "$description": "Controls' edges"
+    },
+    "pressed": {
+      "$value": "{palette.grey.83}",
+      "$description": "A choice pressed"
+    },
+    "chip": {
+      "$value": "{palette.grey.87}",
+      "$description": "Tags; a bar button pressed"
+    },
+    "text": {
+      "$value": "{palette.grey.10}",
+      "$description": "Text",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.canvas",
+            "color.panel",
+            "color.caption",
+            "color.control",
+            "color.field",
+            "color.popover",
+            "color.chip",
+            "color.pressed"
+          ],
+          "least": 4.5
+        }
+      }
+    },
+    "text-quiet": {
+      "$value": "{palette.grey.37}",
+      "$description": "Quieter text",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.canvas",
+            "color.panel",
+            "color.caption",
+            "color.control",
+            "color.field",
+            "color.popover"
+          ],
+          "least": 4.5
+        }
+      }
+    },
+    "accent": {
+      "$value": "{palette.amber.46}",
+      "$description": "The accent, filled: what's selected, pressed or the first choice"
+    },
+    "accent-text": {
+      "$value": "{palette.amber.41}",
+      "$description": "The accent as text",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.panel",
+            "color.control",
+            "color.popover",
+            "color.caption"
+          ],
+          "least": 4.5
+        }
+      }
+    },
+    "on-accent": {
+      "$value": "{palette.grey.100}",
+      "$description": "Text on the accent",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.accent"
+          ],
+          "least": 4.5
+        }
+      }
+    },
+    "selected": {
+      "$value": "{palette.amber.46-a18}",
+      "$description": "Selected, softly"
+    },
+    "label": {
+      "red": {
+        "$value": "{palette.red.47}"
+      },
+      "yellow": {
+        "$value": "{palette.yellow.62}"
+      },
+      "green": {
+        "$value": "{palette.green.52}"
+      },
+      "blue": {
+        "$value": "{palette.blue.52}"
+      }
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "popover": {
+      "$value": {
+        "color": "{palette.black.18}",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 8,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 24,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "dialog": {
+      "$value": {
+        "color": "{palette.black.20}",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 16,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 48,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

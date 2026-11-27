@@ -1,6 +1,6 @@
 # 0006. Tokens in the W3C format, made into CSS variables by a script of our own
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-11-27
 
 ## Context
@@ -32,7 +32,7 @@ The owner's pick of 2026-11-27, in PhotoMatch's step 2.86: "go with your recomme
 
 ## Assumptions to verify
 
-- [ ] The script covers the 2025.10 types we use, colour and dimension among them: step 1.2.
+- [x] The script covers the 2025.10 types we use, colour and dimension among them: on 2026-11-27, step 1.2, colour, dimension, fontFamily, fontWeight and shadow, 197 lines, its 5 tests passing; themes as the Resolver module's one modifier, each theme's CSS selector in the resolver's `$extensions` ([`docs/package.md`](../../docs/package.md#step-12-the-tokens)).
 
 ## Sources
 

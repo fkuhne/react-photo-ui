@@ -1,6 +1,6 @@
 # 0007. Shared controls, each app its own palette
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-11-27
 
 ## Context
@@ -29,7 +29,7 @@ PhotoMatch chose Graphite, dense and quiet, its greys brighter, dark and light (
 
 ## Assumptions to verify
 
-- [ ] A second palette changes the colours on the gallery page and nothing else: step 1.2.
+- [x] A second palette changes the colours on the gallery page and nothing else: on 2026-11-27, step 1.2, the draft of PhotoBook's under `[data-palette="paper"]` sets the 21 colours and two shadows alone, the sizes shared under `:root`; shown beside Graphite on the gallery page. Its quieter text darkened to `#67635c`, as PhotoBook's own, `#6b6760`, is 4.39:1 on its stage.
 
 ## Sources
 

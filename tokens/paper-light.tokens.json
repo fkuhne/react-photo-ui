@@ -1,0 +1,176 @@
+{
+  "$description": "Paper, light: a draft of PhotoBook's own palette, from its App.css on 2026-11-27, to show a second palette over the same controls (record 0007); PhotoBook's own step settles it",
+  "color": {
+    "$type": "color",
+    "canvas": {
+      "$value": "{palette.warm.90}",
+      "$description": "Behind the photos"
+    },
+    "panel": {
+      "$value": "{palette.warm.98}",
+      "$description": "Panels, the bar below"
+    },
+    "caption": {
+      "$value": "{palette.warm.96}",
+      "$description": "A photo's caption"
+    },
+    "control": {
+      "$value": "{palette.warm.100}",
+      "$description": "Controls"
+    },
+    "field": {
+      "$value": "{palette.warm.100}",
+      "$description": "Fields"
+    },
+    "popover": {
+      "$value": "{palette.warm.100}",
+      "$description": "Popovers and menus"
+    },
+    "line": {
+      "$value": "{palette.warm.84}",
+      "$description": "Lines between panels"
+    },
+    "edge": {
+      "$value": "{palette.warm.84}",
+      "$description": "Controls' edges"
+    },
+    "pressed": {
+      "$value": "{palette.warm.90}",
+      "$description": "A choice pressed"
+    },
+    "chip": {
+      "$value": "{palette.warm.90}",
+      "$description": "Tags; a bar button pressed"
+    },
+    "text": {
+      "$value": "{palette.warm.10}",
+      "$description": "Text",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.canvas",
+            "color.panel",
+            "color.caption",
+            "color.control",
+            "color.field",
+            "color.popover",
+            "color.chip",
+            "color.pressed"
+          ],
+          "least": 4.5
+        }
+      }
+    },
+    "text-quiet": {
+      "$value": "{palette.warm.42}",
+      "$description": "Quieter text",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.canvas",
+            "color.panel",
+            "color.caption",
+            "color.control",
+            "color.field",
+            "color.popover"
+          ],
+          "least": 4.5
+        }
+      }
+    },
+    "accent": {
+      "$value": "{palette.teal.42}",
+      "$description": "The accent, filled: what's selected, pressed or the first choice"
+    },
+    "accent-text": {
+      "$value": "{palette.teal.42}",
+      "$description": "The accent as text",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.panel",
+            "color.control",
+            "color.popover",
+            "color.caption"
+          ],
+          "least": 4.5
+        }
+      }
+    },
+    "on-accent": {
+      "$value": "{palette.warm.100}",
+      "$description": "Text on the accent",
+      "$extensions": {
+        "org.photo-ui": {
+          "contrastOn": [
+            "color.accent"
+          ],
+          "least": 4.5
+        }
+      }
+    },
+    "selected": {
+      "$value": "{palette.warm.90}",
+      "$description": "Selected, softly"
+    },
+    "label": {
+      "red": {
+        "$value": "{palette.red.47}"
+      },
+      "yellow": {
+        "$value": "{palette.yellow.62}"
+      },
+      "green": {
+        "$value": "{palette.green.52}"
+      },
+      "blue": {
+        "$value": "{palette.blue.52}"
+      }
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "popover": {
+      "$value": {
+        "color": "{palette.black.18}",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 8,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 24,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "dialog": {
+      "$value": {
+        "color": "{palette.black.20}",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 16,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 48,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

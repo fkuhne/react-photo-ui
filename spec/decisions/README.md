@@ -26,5 +26,5 @@ Don't rewrite a record to change its decision. Write a new record and mark the o
 | [0003](0003-open-from-the-start-under-mit-or-apache-2-0.md) | Open from the start, under MIT OR Apache-2.0 | Accepted | 2026-11-27 |
 | [0004](0004-the-controls-built-on-react-aria-components.md) | The controls built on React Aria Components | Proposed | 2026-11-27 |
 | [0005](0005-lucide-s-icons-those-used-copied-as-svg-files.md) | Lucide's icons, those used, copied as SVG files | Proposed | 2026-11-27 |
-| [0006](0006-tokens-in-the-w3c-format-made-into-css-variables-by-a-script-of-our-own.md) | Tokens in the W3C format, made into CSS variables by a script of our own | Proposed | 2026-11-27 |
-| [0007](0007-shared-controls-each-app-its-own-palette.md) | Shared controls, each app its own palette | Proposed | 2026-11-27 |
+| [0006](0006-tokens-in-the-w3c-format-made-into-css-variables-by-a-script-of-our-own.md) | Tokens in the W3C format, made into CSS variables by a script of our own | Accepted | 2026-11-27 |
+| [0007](0007-shared-controls-each-app-its-own-palette.md) | Shared controls, each app its own palette | Accepted | 2026-11-27 |

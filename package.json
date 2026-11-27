@@ -17,6 +17,8 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.json": "./dist/tokens.json",
     "./package.json": "./package.json"
   },
   "files": [
@@ -28,9 +30,10 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "node scripts/make.mjs && vite",
     "make": "node scripts/make.mjs",
-    "check": "tsc --noEmit -p tsconfig.json"
+    "check": "tsc --noEmit -p tsconfig.json",
+    "test": "node --test \"scripts/*.test.mjs\""
   },
   "peerDependencies": {
     "react": "^19.3.1",

@@ -1,0 +1,69 @@
+{
+  "name": "photo-ui",
+  "version": "2025.10",
+  "description": "photo-ui's tokens: the raw palette and the shared sizes, then one theme's names by purpose",
+  "sets": {
+    "base": {
+      "description": "The palette, and the type, corners, space and sizes every theme shares",
+      "sources": [
+        {
+          "$ref": "palette.tokens.json"
+        },
+        {
+          "$ref": "ui.tokens.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "theme": {
+      "description": "Each palette's names by purpose, dark and light",
+      "default": "graphite-dark",
+      "contexts": {
+        "graphite-dark": [
+          {
+            "$ref": "graphite-dark.tokens.json"
+          }
+        ],
+        "graphite-light": [
+          {
+            "$ref": "graphite-light.tokens.json"
+          }
+        ],
+        "paper-light": [
+          {
+            "$ref": "paper-light.tokens.json"
+          }
+        ]
+      }
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/base"
+    },
+    {
+      "$ref": "#/modifiers/theme"
+    }
+  ],
+  "$extensions": {
+    "org.photo-ui": {
+      "prefix": "pu",
+      "css": {
+        "graphite-dark": {
+          "selector": ":root, [data-theme=\"dark\"]",
+          "scheme": "dark"
+        },
+        "graphite-light": {
+          "selector": "[data-theme=\"light\"]",
+          "scheme": "light",
+          "system": true
+        },
+        "paper-light": {
+          "selector": "[data-palette=\"paper\"]",
+          "scheme": "light"
+        }
+      }
+    }
+  }
+}

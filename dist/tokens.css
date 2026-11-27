@@ -1,0 +1,137 @@
+/* photo-ui's tokens, made by scripts/tokens.mjs from tokens/*.tokens.json: don't edit. */
+
+:root {
+  --pu-text-scale: 1;
+  --pu-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --pu-font-size-caption: calc(11px * var(--pu-text-scale, 1));
+  --pu-font-size-text: calc(12px * var(--pu-text-scale, 1));
+  --pu-font-size-title: calc(13px * var(--pu-text-scale, 1));
+  --pu-font-line-caption: calc(14px * var(--pu-text-scale, 1));
+  --pu-font-line-text: calc(16px * var(--pu-text-scale, 1));
+  --pu-font-line-title: calc(18px * var(--pu-text-scale, 1));
+  --pu-font-weight-regular: 400;
+  --pu-font-weight-strong: 600;
+  --pu-font-tracking-label: 0.66px;
+  --pu-radius-control: 3px;
+  --pu-radius-popover: 5px;
+  --pu-radius-dialog: 6px;
+  --pu-space-2: 2px;
+  --pu-space-4: 4px;
+  --pu-space-6: 6px;
+  --pu-space-8: 8px;
+  --pu-space-10: 10px;
+  --pu-space-12: 12px;
+  --pu-space-16: 16px;
+  --pu-space-20: 20px;
+  --pu-size-control: 24px;
+  --pu-size-control-large: 26px;
+  --pu-size-menu-row: 22px;
+  --pu-size-tree-row: 24px;
+  --pu-size-bar: 26px;
+}
+
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+  --pu-color-canvas: #1e1e20;
+  --pu-color-panel: #262629;
+  --pu-color-caption: #29292c;
+  --pu-color-control: #303033;
+  --pu-color-field: #1e1e20;
+  --pu-color-popover: #303033;
+  --pu-color-line: #36363a;
+  --pu-color-edge: #46464b;
+  --pu-color-pressed: #404046;
+  --pu-color-chip: #38383c;
+  --pu-color-text: #e4e4e7;
+  --pu-color-text-quiet: #a0a0a7;
+  --pu-color-accent: #d8963f;
+  --pu-color-accent-text: #d8963f;
+  --pu-color-on-accent: #1e1e20;
+  --pu-color-selected: rgb(216 150 63 / 0.18);
+  --pu-color-label-red: #e5534b;
+  --pu-color-label-yellow: #e3b341;
+  --pu-color-label-green: #57ab5a;
+  --pu-color-label-blue: #539bf5;
+  --pu-shadow-popover: 0px 8px 24px 0px rgb(0 0 0 / 0.5);
+  --pu-shadow-dialog: 0px 16px 48px 0px rgb(0 0 0 / 0.55);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --pu-color-canvas: #d6d6da;
+  --pu-color-panel: #ececef;
+  --pu-color-caption: #e6e6ea;
+  --pu-color-control: #f7f7f8;
+  --pu-color-field: #ffffff;
+  --pu-color-popover: #ffffff;
+  --pu-color-line: #c6c6cc;
+  --pu-color-edge: #b4b4bb;
+  --pu-color-pressed: #d0d0d6;
+  --pu-color-chip: #dcdce1;
+  --pu-color-text: #1c1c1f;
+  --pu-color-text-quiet: #57575e;
+  --pu-color-accent: #a85c0c;
+  --pu-color-accent-text: #95520a;
+  --pu-color-on-accent: #ffffff;
+  --pu-color-selected: rgb(168 92 12 / 0.18);
+  --pu-color-label-red: #d1382f;
+  --pu-color-label-yellow: #c28f12;
+  --pu-color-label-green: #2f8f3a;
+  --pu-color-label-blue: #2f7de0;
+  --pu-shadow-popover: 0px 8px 24px 0px rgb(0 0 0 / 0.18);
+  --pu-shadow-dialog: 0px 16px 48px 0px rgb(0 0 0 / 0.2);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]), [data-theme="system"] {
+    color-scheme: light;
+    --pu-color-canvas: #d6d6da;
+    --pu-color-panel: #ececef;
+    --pu-color-caption: #e6e6ea;
+    --pu-color-control: #f7f7f8;
+    --pu-color-field: #ffffff;
+    --pu-color-popover: #ffffff;
+    --pu-color-line: #c6c6cc;
+    --pu-color-edge: #b4b4bb;
+    --pu-color-pressed: #d0d0d6;
+    --pu-color-chip: #dcdce1;
+    --pu-color-text: #1c1c1f;
+    --pu-color-text-quiet: #57575e;
+    --pu-color-accent: #a85c0c;
+    --pu-color-accent-text: #95520a;
+    --pu-color-on-accent: #ffffff;
+    --pu-color-selected: rgb(168 92 12 / 0.18);
+    --pu-color-label-red: #d1382f;
+    --pu-color-label-yellow: #c28f12;
+    --pu-color-label-green: #2f8f3a;
+    --pu-color-label-blue: #2f7de0;
+    --pu-shadow-popover: 0px 8px 24px 0px rgb(0 0 0 / 0.18);
+    --pu-shadow-dialog: 0px 16px 48px 0px rgb(0 0 0 / 0.2);
+  }
+}
+
+[data-palette="paper"] {
+  color-scheme: light;
+  --pu-color-canvas: #e7e3da;
+  --pu-color-panel: #fbfaf7;
+  --pu-color-caption: #f6f4ef;
+  --pu-color-control: #ffffff;
+  --pu-color-field: #ffffff;
+  --pu-color-popover: #ffffff;
+  --pu-color-line: #d8d3c8;
+  --pu-color-edge: #d8d3c8;
+  --pu-color-pressed: #e7e3da;
+  --pu-color-chip: #e7e3da;
+  --pu-color-text: #1d1c1a;
+  --pu-color-text-quiet: #67635c;
+  --pu-color-accent: #2f6f5e;
+  --pu-color-accent-text: #2f6f5e;
+  --pu-color-on-accent: #ffffff;
+  --pu-color-selected: #e7e3da;
+  --pu-color-label-red: #d1382f;
+  --pu-color-label-yellow: #c28f12;
+  --pu-color-label-green: #2f8f3a;
+  --pu-color-label-blue: #2f7de0;
+  --pu-shadow-popover: 0px 8px 24px 0px rgb(0 0 0 / 0.18);
+  --pu-shadow-dialog: 0px 16px 48px 0px rgb(0 0 0 / 0.2);
+}

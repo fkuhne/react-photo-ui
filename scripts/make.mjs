@@ -6,10 +6,11 @@
 //
 // npm run make
 import { spawnSync } from "node:child_process";
-import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
+import { build, checkContrast, stylesheet, table, TokenError } from "./tokens.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const src = join(root, "src");
@@ -34,6 +35,25 @@ const index = readFileSync(join(src, "index.ts"), "utf8");
 if (!index.includes(`PHOTO_UI_VERSION = "${version}"`)) fail(`src/index.ts's PHOTO_UI_VERSION isn't package.json's ${version}`);
 
 rmSync(dist, { recursive: true, force: true });
+mkdirSync(dist, { recursive: true });
+
+// The tokens (record 0006): their CSS and their table, and each pair's contrast, failing under its least.
+let tokens;
+try {
+  tokens = build(join(root, "tokens", "photo-ui.resolver.json"));
+} catch (e) {
+  fail(e instanceof TokenError ? `tokens: ${e.message}` : String(e));
+}
+let failed = 0;
+for (const [context, resolved] of Object.entries(tokens.themes)) {
+  for (const pair of checkContrast(resolved)) {
+    if (!pair.ok) failed++;
+    console.log(`${pair.ok ? "ok    " : "FAILED"} ${context.padEnd(15)} ${pair.text.padEnd(18)} on ${pair.on.padEnd(14)} ${pair.ratio.toFixed(2)}:1`);
+  }
+}
+if (failed) fail(`${failed} pairs of text and background under their least contrast`);
+writeFileSync(join(dist, "tokens.css"), stylesheet(tokens));
+writeFileSync(join(dist, "tokens.json"), JSON.stringify(table(tokens), null, 2) + "\n");
 const tsc = spawnSync(process.execPath, [join(root, "node_modules", "typescript", "bin", "tsc"), "-p", join(root, "tsconfig.build.json")], { stdio: "inherit" });
 if (tsc.status !== 0) fail("TypeScript's build failed");
 
