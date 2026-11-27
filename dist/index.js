@@ -9,3 +9,4 @@ export { Button } from "./Button";
 export { Select } from "./Select";
 export { Checkbox, RadioGroup, Segmented, Slider, Switch, ToggleButton, } from "./Choices";
 export { Dialog, DialogTitle } from "./Dialog";
+export { Field } from "./Field";

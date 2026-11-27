@@ -49,16 +49,21 @@ PhotoMatch's plan step 2.88. Each family on its page of the site, in every theme
 - [x] 2.1 Buttons and the dropdown, the most seen first, PhotoMatch's order of 2026-11-27: the accented, the plain, the quiet and the icon-only button, turned off too; the dropdown and its list.
 
   Done on 2026-11-27 ([0004](decisions/0004-the-controls-built-on-react-aria-components.md) accepted): `Button` and `Select` on React Aria's, drawn by `controls.css` from the tokens and React Aria's data attributes alone; on the site's Buttons and Fields pages, in each palette. PhotoMatch takes them in its step 2.88, its self-check passing. See [`docs/package.md`](../docs/package.md#step-21-buttons-and-the-dropdown).
-- [ ] 2.2 Fields: a text field and a field that suggests as one types.
+- [x] 2.2 Fields: a text field and a field that suggests as one types.
+
+  Done on 2026-11-27: `Field`, React Aria's `Input`, 24 px high, the accent's edge while typed in, the error's while invalid. The field that suggests as one types keeps PhotoMatch's own behaviour for now, drawn with the design system's field, popover and list rows; on React Aria's `ComboBox` in step 2.6. See [`docs/package.md`](../docs/package.md#step-22-the-text-field).
 - [x] 2.3 Segmented choices, sliders and switches.
 
   Done on 2026-11-27 ([0011](decisions/0011-a-knob-colour-for-switches-and-sliders.md) accepted): `ToggleButton`, `Segmented`, joined or apart, `Switch`, `Checkbox`, `RadioGroup` and `Slider`, its value in a box beside it, on React Aria's; a switch where a setting takes effect at once, as Microsoft's guidelines ask, a checkbox for any of a list, as both Apple's and Microsoft's do. On the site's Choices page. See [`docs/package.md`](../docs/package.md#step-23-the-choices).
 - [x] 2.4 Popovers, menus, tooltips, dialogs and messages.
 
   Done on 2026-11-27: `Dialog` and `DialogTitle`, on React Aria's `ModalOverlay`, `Modal` and `Dialog`, focus kept inside while open, a click on the scrim closing it, Esc too unless the app's keys handle it (`isKeyboardDismissDisabled`); the message, `.pu-message`, a popover with its words and an action; the popover from step 2.1. The menus stay each system's (PhotoMatch's record 0075), and the tooltips too (its record 0074). On the site's Popovers page. See [`docs/package.md`](../docs/package.md#step-24-dialogs-and-messages).
-- [ ] 2.5 Panels, lists, the folder tree and the tags field.
+- [x] 2.5 Panels, lists, the folder tree and the tags field.
 
-Version 1 is done when PhotoMatch's controls are all the design system's.
+  Done on 2026-11-27, drawn: the lists with the design system's checkboxes (step 2.3); the folder tree's rows, the tags field's chips and the panels' headers on the tokens, PhotoMatch's own behaviour kept, the self-check covering their keys, their right clicks and the photos dropped on folders.
+- [ ] 2.6 The folder tree, the field that suggests as one types and the tags field on React Aria's `Tree`, `ComboBox` and `TagGroup`, each keeping PhotoMatch's keys, its right clicks and its drops, and its self-check passing.
+
+Version 1 is done when PhotoMatch's controls are all the design system's: drawn by it after step 2.5, built on it after 2.6.
 
 ## Phase 3: PhotoDev's controls
 

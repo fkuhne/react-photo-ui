@@ -104,6 +104,13 @@ On 2026-11-27, PhotoMatch's plan step 2.88, its second family ([0004](../spec/de
 - **`npm run make`:** `dist/` 92,901 bytes, 18,532 gzipped by the sum of each file's, the build's own count.
 - **Drawn in WebKit,** the Choices page, dark and light: each control in the three palettes, the knobs light in each.
 
+## Step 2.2: the text field
+
+On 2026-11-27, PhotoMatch's plan step 2.88, its last family.
+
+- **`Field`:** React Aria's `Input`, which passes every property to its `<input>` (its 1.22.1 code), a ref and an app's key handlers among them, so that it stands in for an `<input>`; 24 px high, the `field` ground, the `edge`, the `accent` while typed in, the `error` while `aria-invalid`.
+- **The field that suggests as one types,** the folder tree and the tags field keep PhotoMatch's behaviour for now, drawn with `.pu-field`, `.pu-popover` and `.pu-listbox-item`: their keys, right clicks and drops are what its self-check covers most, and React Aria's `ComboBox`, `Tree` and `TagGroup` each change them; step 2.6 moves them.
+
 ## Step 2.4: dialogs and messages
 
 On 2026-11-27, PhotoMatch's plan step 2.88, its third family.

@@ -627,3 +627,38 @@
   font-size: var(--pu-font-size-text);
   line-height: var(--pu-font-line-text);
 }
+
+/* A text field (plan step 2.2): 24 px high, the field's ground, the accent's edge while typed in. */
+.pu-field {
+  box-sizing: border-box;
+  min-width: 0;
+  height: var(--pu-size-control);
+  padding: 0 var(--pu-space-6);
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+  background: var(--pu-color-field);
+  color: var(--pu-color-text);
+  font: inherit;
+  font-size: var(--pu-font-size-text);
+  outline: none;
+}
+
+.pu-field::placeholder {
+  color: var(--pu-color-text-quiet);
+}
+
+.pu-field[data-hovered] {
+  border-color: var(--pu-color-text-quiet);
+}
+
+.pu-field[data-focused] {
+  border-color: var(--pu-color-accent);
+}
+
+.pu-field[aria-invalid="true"] {
+  border-color: var(--pu-color-error);
+}
+
+.pu-field[data-disabled] {
+  opacity: 0.4;
+}

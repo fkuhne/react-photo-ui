@@ -2,7 +2,7 @@
 // built in phase 2 or still to come. Each reads the built tokens, contrast and icons, so that it shows what the package holds.
 import { useState, type ReactNode } from "react";
 import { ListBox, ListBoxItem, type Key } from "react-aria-components";
-import { Button, Checkbox, Dialog, DialogTitle, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, ToggleButton, type IconName } from "../src";
+import { Button, Checkbox, Dialog, DialogTitle, Field, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, ToggleButton, type IconName } from "../src";
 import tokenTable from "../dist/tokens.json";
 import contrastTable from "../dist/contrast.json";
 
@@ -367,7 +367,13 @@ function SortExample() {
 
 export function Fields() {
   return (
-    <Page title="Fields and dropdowns" lead="A dropdown shows the choice made and opens its list in a popover, at least as wide as itself. The text field and the field that suggests as one types come in plan step 2.2.">
+    <Page title="Fields and dropdowns" lead="A text field, 24 px high, its edge in the accent while typed in; a dropdown shows the choice made and opens its list in a popover, at least as wide as itself.">
+      <h2>The text field</h2>
+      <InThemes>
+        <Field aria-label="Name" defaultValue="2026-11-27_001" />
+        <Field aria-label="Camera" placeholder="Any" />
+        <Field aria-label="Pattern" defaultValue="{Lens" aria-invalid="true" />
+      </InThemes>
       <h2>The dropdown</h2>
       <InThemes>
         <div style={{ width: 180 }}>
