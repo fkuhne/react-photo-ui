@@ -13,7 +13,8 @@ export interface DialogProps {
   "aria-label"?: string;
   /** The app keeps Esc: its own keys close the dialog. */
   isKeyboardDismissDisabled?: boolean;
-  /** Classes on the dialog's box, for the app's layout. */
+  /** Classes on the dialog itself, the element named `dialog`, for the app's layout: its size, its
+   * padding, its grid. The box around it, its edge, corners, ground and shadow, is ours. */
   className?: string;
   children: ReactNode;
 }
@@ -30,8 +31,8 @@ export function Dialog({ onClose, className, children, isKeyboardDismissDisabled
       }}
       className="pu-dialog-scrim"
     >
-      <Modal className={["pu-dialog", className].filter(Boolean).join(" ")}>
-        <AriaDialog {...aria} className="pu-dialog-frame">
+      <Modal className="pu-dialog">
+        <AriaDialog {...aria} className={["pu-dialog-frame", className].filter(Boolean).join(" ")}>
           {children}
         </AriaDialog>
       </Modal>

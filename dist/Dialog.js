@@ -5,7 +5,7 @@ export function Dialog({ onClose, className, children, isKeyboardDismissDisabled
     return (_jsx(ModalOverlay, { isOpen: true, isDismissable: true, isKeyboardDismissDisabled: isKeyboardDismissDisabled, onOpenChange: (open) => {
             if (!open)
                 onClose();
-        }, className: "pu-dialog-scrim", children: _jsx(Modal, { className: ["pu-dialog", className].filter(Boolean).join(" "), children: _jsx(AriaDialog, { ...aria, className: "pu-dialog-frame", children: children }) }) }));
+        }, className: "pu-dialog-scrim", children: _jsx(Modal, { className: "pu-dialog", children: _jsx(AriaDialog, { ...aria, className: ["pu-dialog-frame", className].filter(Boolean).join(" "), children: children }) }) }));
 }
 /** A dialog's title, which names it for a screen reader too. */
 export function DialogTitle({ children, className }) {

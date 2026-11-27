@@ -596,10 +596,12 @@
 }
 
 .pu-dialog-frame {
+  box-sizing: border-box;
   display: flex;
   flex: 1;
   flex-direction: column;
   min-height: 0;
+  overflow: auto;
   outline: none;
 }
 
