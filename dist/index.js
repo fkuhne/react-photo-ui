@@ -12,3 +12,4 @@ export { Dialog, DialogTitle } from "./Dialog";
 export { Field } from "./Field";
 export { ComboBox } from "./ComboBox";
 export { Tags } from "./Tags";
+export { PopoverContainer } from "./PopoverContainer";

@@ -2,7 +2,7 @@
 // built in phase 2 or still to come. Each reads the built tokens, contrast and icons, so that it shows what the package holds.
 import { useState, type ReactNode } from "react";
 import { ListBox, ListBoxItem, type Key } from "react-aria-components";
-import { Button, Checkbox, ComboBox, Dialog, DialogTitle, Field, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, Tags, ToggleButton, type IconName } from "../src";
+import { Button, Checkbox, PopoverContainer, ComboBox, Dialog, DialogTitle, Field, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, Tags, ToggleButton, type IconName } from "../src";
 import tokenTable from "../dist/tokens.json";
 import contrastTable from "../dist/contrast.json";
 
@@ -289,11 +289,21 @@ function InThemes({ children }: { children: ReactNode }) {
   return (
     <div className="in-themes">
       {CONTEXTS.map((c) => (
-        <div key={c.id} className="in-theme" data-theme={c.id === "graphite-dark" ? "dark" : "light"} data-palette={c.id === "paper-light" ? "paper" : undefined}>
-          <span className="in-theme-name">{c.name}</span>
+        <ThemePanel key={c.id} context={c.id} name={c.name}>
           {children}
-        </div>
+        </ThemePanel>
       ))}
+    </div>
+  );
+}
+
+/** One theme's panel; the popovers of the controls in it open inside it, in its theme and accent. */
+function ThemePanel({ context, name, children }: { context: Context; name: string; children: ReactNode }) {
+  const [panel, setPanel] = useState<HTMLDivElement | null>(null);
+  return (
+    <div ref={setPanel} className="in-theme" data-theme={context === "graphite-dark" ? "dark" : "light"} data-palette={context === "paper-light" ? "paper" : undefined}>
+      <span className="in-theme-name">{name}</span>
+      <PopoverContainer container={panel}>{children}</PopoverContainer>
     </div>
   );
 }

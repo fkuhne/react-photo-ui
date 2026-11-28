@@ -132,6 +132,10 @@ On 2026-11-27, PhotoMatch's plan step 2.91.
 - **Drawn in WebKit,** the site's Panels page, dark and light.
 - **`npm run make`:** `dist/` 108,363 bytes, 23,782 gzipped.
 
+## The popovers' theme
+
+On 2026-11-27, from the owner's look at the live site: a dropdown's list opened in the page's theme, not its panel's, bright orange in a green Paper panel. React Aria opens popovers in `<body>`, outside the element that sets `data-theme`. `PopoverContainer` says where they open; `Select` and `ComboBox` use it (`UNSTABLE_portalContainer`, 1.22.1), and the site gives each theme's panel its own. An app with one theme needs nothing. Not tried in a browser by me: the snapshot tool can't click.
+
 ## Commands
 
 ```sh

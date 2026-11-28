@@ -6,6 +6,7 @@
 import type { FocusEvent, KeyboardEvent, ReactNode, Ref } from "react";
 import { ComboBox as AriaComboBox, ButtonContext, Input, ListBox, ListBoxItem, Popover } from "react-aria-components";
 import { Icon } from "./Icon";
+import { usePopoverContainer } from "./PopoverContainer";
 
 export interface ComboBoxItem {
   /** What the app knows it by, as text. */
@@ -65,7 +66,7 @@ export function ComboBox({ items, inputValue, onInputChange, onChoose, onKeyDown
           <span className="pu-combobox-end">{end ?? <Icon name="chevron-down" className="pu-combobox-chevron" />}</span>
         </ButtonContext.Provider>
       </div>
-      <Popover className="pu-popover pu-combobox-popover" offset={2} placement="bottom start">
+      <Popover className="pu-popover pu-combobox-popover" offset={2} placement="bottom start" UNSTABLE_portalContainer={usePopoverContainer()}>
         <ListBox className="pu-listbox" items={items}>
           {(item) => (
             <ListBoxItem id={item.id} textValue={item.name} className="pu-listbox-item">

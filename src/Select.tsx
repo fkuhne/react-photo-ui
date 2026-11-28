@@ -5,6 +5,7 @@
 import type { ReactNode } from "react";
 import { Button, Label, ListBox, ListBoxItem, Popover, Select as AriaSelect, SelectValue, type Key, type SelectProps as AriaSelectProps } from "react-aria-components";
 import { Icon } from "./Icon";
+import { usePopoverContainer } from "./PopoverContainer";
 
 export interface SelectOption {
   /** What the choice is, as the app knows it. */
@@ -40,7 +41,7 @@ export function Select({ options, value, onChange, label, className, ...props }:
         <SelectValue className="pu-select-value" />
         <Icon name="chevron-down" className="pu-select-chevron" />
       </Button>
-      <Popover className="pu-popover pu-select-popover" offset={4}>
+      <Popover className="pu-popover pu-select-popover" offset={4} UNSTABLE_portalContainer={usePopoverContainer()}>
         <ListBox className="pu-listbox" items={options}>
           {(option) => (
             <ListBoxItem id={option.id} textValue={option.name} className="pu-listbox-item">
