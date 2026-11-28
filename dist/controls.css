@@ -463,6 +463,8 @@
   flex: 1;
   min-width: 120px;
   height: 16px;
+  /* The thumb's half each side, so that at either end it stays whole, inside the slider. */
+  margin: 0 6px;
 }
 
 .pu-slider-track::before {
@@ -829,6 +831,18 @@
 
 .pu-tree-twisty:hover {
   color: var(--pu-color-text);
+}
+
+/* A row's icon, after its twisty: in the accent, as Apple's guidance has a sidebar's icons by
+   default; quiet in a quiet row. */
+.pu-tree-icon {
+  flex: none;
+  margin-right: var(--pu-space-4);
+  color: var(--pu-color-accent-text);
+}
+
+.pu-tree-row[data-quiet] .pu-tree-icon {
+  color: var(--pu-color-text-quiet);
 }
 
 .pu-tree-name {

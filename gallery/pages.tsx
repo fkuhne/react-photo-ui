@@ -607,6 +607,7 @@ function TreeRowsExample() {
                 </svg>
               )}
             </span>
+            <Icon name={row.open ? "folder-open" : "folder"} className="pu-tree-icon" />
             <span className="pu-tree-name">{row.name}</span>
             <span className="pu-tree-count">{row.quiet ? "Not found" : row.count || ""}</span>
           </div>
