@@ -210,8 +210,8 @@
 }
 
 .pu-listbox-item[data-focused] {
-  background: var(--pu-color-accent);
-  color: var(--pu-color-on-accent);
+  background: var(--pu-color-selected);
+  color: var(--pu-color-text);
 }
 
 .pu-listbox-item-check {
@@ -251,8 +251,8 @@
 }
 
 .pu-toggle[data-selected] {
-  border-color: var(--pu-color-text-quiet);
-  background: var(--pu-color-pressed);
+  border-color: var(--pu-color-accent);
+  background: var(--pu-color-selected);
   color: var(--pu-color-text);
 }
 
@@ -267,7 +267,7 @@
 
 .pu-toggle--quiet[data-selected] {
   border-color: transparent;
-  background: var(--pu-color-chip);
+  background: var(--pu-color-selected);
 }
 
 .pu-toggle--icon {
@@ -309,7 +309,7 @@
 }
 
 .pu-segment[data-selected] {
-  background: var(--pu-color-pressed);
+  background: var(--pu-color-selected);
   color: var(--pu-color-text);
 }
 
@@ -340,8 +340,8 @@
 }
 
 .pu-segmented--apart .pu-segment[data-selected] {
-  border-color: var(--pu-color-text-quiet);
-  background: var(--pu-color-chip);
+  border-color: var(--pu-color-accent);
+  background: var(--pu-color-selected);
 }
 
 .pu-toggle[data-focus-visible],

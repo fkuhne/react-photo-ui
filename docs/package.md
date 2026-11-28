@@ -136,6 +136,10 @@ On 2026-11-27, PhotoMatch's plan step 2.91.
 
 On 2026-11-27, from the owner's look at the live site: a dropdown's list opened in the page's theme, not its panel's, bright orange in a green Paper panel. React Aria opens popovers in `<body>`, outside the element that sets `data-theme`. `PopoverContainer` says where they open; `Select` and `ComboBox` use it (`UNSTABLE_portalContainer`, 1.22.1), and the site gives each theme's panel its own. An app with one theme needs nothing. Not tried in a browser by me: the snapshot tool can't click.
 
+## One selected colour
+
+On 2026-11-27, from the owner's look at the live site: "only buttons are ok" on colours. The controls drew a selection three ways, the solid accent (switch, checkbox, radio, an open list's row), the soft accent (a tree row) and grey (segmented choices, toggles). Now one rule: a setting on or off, and a button the first choice, take the solid `accent`; the item or choice that is the current one in a set or list takes the soft `selected` tint, with an `accent` edge on a button. Changed: a list's focused row, toggles, segmented choices, apart or joined.
+
 ## Commands
 
 ```sh
