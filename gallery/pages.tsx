@@ -2,7 +2,7 @@
 // built in phase 2 or still to come. Each reads the built tokens, contrast and icons, so that it shows what the package holds.
 import { useState, type ReactNode } from "react";
 import { ListBox, ListBoxItem, type Key } from "react-aria-components";
-import { Button, Checkbox, Dialog, DialogTitle, Field, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, ToggleButton, type IconName } from "../src";
+import { Button, Checkbox, ComboBox, Dialog, DialogTitle, Field, ICON_NAMES, Icon, LUCIDE_VERSION, PHOTO_UI_VERSION, Segmented, Select, Slider, Switch, Tags, ToggleButton, type IconName } from "../src";
 import tokenTable from "../dist/tokens.json";
 import contrastTable from "../dist/contrast.json";
 
@@ -46,7 +46,7 @@ export function Overview() {
             <strong>Icons:</strong> {ICON_NAMES.length} of Lucide's, {LUCIDE_VERSION}, drawn by one component at the tokens' size and line.
           </li>
           <li>
-            <strong>Controls:</strong> buttons, fields, choices, popovers, panels and lists, on React Aria Components, accessible and with a desktop app's keys. Buttons, the dropdown, the choices and the dialog are here; the rest come in the plan's phase 2.
+            <strong>Controls:</strong> buttons, fields, choices, popovers, panels and lists, on React Aria Components, accessible and with a desktop app's keys. Buttons, fields, choices, dialogs, tags and a tree's rows, all of them PhotoMatch's controls.
           </li>
         </ul>
       </div>
@@ -545,6 +545,84 @@ import { Dialog, DialogTitle } from "photo-ui";
     …
   </Dialog>
 )}`}</Code>
+    </Page>
+  );
+}
+
+const CAMERAS = ["ILCE-1", "ILCE-7M4", "ILCE-7RM5", "Nikon Z 8", "Canon EOS R5 Mark II"];
+
+function ComboExample() {
+  const [text, setText] = useState("");
+  const shown = CAMERAS.filter((c) => c.toLowerCase().includes(text.trim().toLowerCase()));
+  return (
+    <div style={{ width: 200 }}>
+      <ComboBox aria-label="Camera" placeholder="Any" items={shown.map((c) => ({ id: c, name: c }))} inputValue={text} onInputChange={setText} onChoose={setText} />
+    </div>
+  );
+}
+
+function TagsExample() {
+  const [tags, setTags] = useState([
+    { tag: "Travel > Portugal", on: 3 },
+    { tag: "Family", on: 2 },
+    { tag: "Best", on: 3 },
+  ]);
+  return (
+    <Tags
+      aria-label="Tags"
+      items={tags.map(({ tag, on }) => ({ id: tag, label: tag, name: on < 3 ? `${tag} · ${on} of 3` : tag, acts: on < 3, title: on < 3 ? "Click to add it to all" : tag }))}
+      onAction={(id) => setTags(tags.map((t) => (t.tag === id ? { ...t, on: 3 } : t)))}
+      onRemove={(id) => setTags(tags.filter((t) => t.tag !== id))}
+      removeLabel={(item) => `Remove ${item.label}`}
+    />
+  );
+}
+
+function TreeRowsExample() {
+  const rows = [
+    { name: "2026", level: 0, open: true, count: 0 },
+    { name: "2026-08-10 Paris", level: 1, open: false, count: 383, current: true },
+    { name: "2026-09-02 Lisbon", level: 1, open: false, count: 212 },
+    { name: "Card import", level: 1, open: false, count: 0, quiet: true },
+  ];
+  return (
+    <div role="tree" aria-label="Folders" style={{ width: 240 }}>
+      {rows.map((row) => (
+        <div role="treeitem" aria-selected={!!row.current} key={row.name} tabIndex={-1}>
+          <div className="pu-tree-row" data-current={row.current || undefined} data-quiet={row.quiet || undefined} style={{ paddingLeft: row.level * 14 + 4 }}>
+            <span className="pu-tree-twisty" data-open={row.open || undefined}>
+              {row.level === 0 && (
+                <svg viewBox="0 0 14 14" aria-hidden="true">
+                  <path d="M2.5 4.5h9L7 10.5z" />
+                </svg>
+              )}
+            </span>
+            <span className="pu-tree-name">{row.name}</span>
+            <span className="pu-tree-count">{row.quiet ? "Not found" : row.count || ""}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function Panels() {
+  return (
+    <Page title="Panels, lists, trees and tags" lead="A field that suggests as one types, its list the dropdown's; tags as chips, each with its ×; a tree's rows, the current one softly in the accent. An app's tree keeps its own behaviour; these are its rows.">
+      <h2>A field that suggests</h2>
+      <InThemes>
+        <ComboExample />
+      </InThemes>
+      <h2>Tags</h2>
+      <InThemes>
+        <TagsExample />
+      </InThemes>
+      <h2>A tree's rows</h2>
+      <InThemes>
+        <TreeRowsExample />
+      </InThemes>
+      <h2>Keys</h2>
+      <p>The field: the arrows move in its list, Enter takes a suggestion or what's typed, as the app understands it. The tags: the arrows move between them, Delete removes one. A tree's keys are its app's, by W3C's tree pattern.</p>
     </Page>
   );
 }

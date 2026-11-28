@@ -61,9 +61,11 @@ PhotoMatch's plan step 2.88. Each family on its page of the site, in every theme
 - [x] 2.5 Panels, lists, the folder tree and the tags field.
 
   Done on 2026-11-27, drawn: the lists with the design system's checkboxes (step 2.3); the folder tree's rows, the tags field's chips and the panels' headers on the tokens, PhotoMatch's own behaviour kept, the self-check covering their keys, their right clicks and the photos dropped on folders.
-- [ ] 2.6 The folder tree, the field that suggests as one types and the tags field on React Aria's `Tree`, `ComboBox` and `TagGroup`, each keeping PhotoMatch's keys, its right clicks and its drops, and its self-check passing.
+- [x] 2.6 The folder tree, the field that suggests as one types and the tags field on React Aria's `Tree`, `ComboBox` and `TagGroup`, each keeping PhotoMatch's keys, its right clicks and its drops, and its self-check passing.
 
-Version 1 is done when PhotoMatch's controls are all the design system's: drawn by it after step 2.5, built on it after 2.6.
+  Done on 2026-11-27 ([0012](decisions/0012-an-app-s-tree-keeps-its-behaviour-the-design-system-draws-its-rows.md) accepted): `ComboBox`, React Aria's, the app holding its text and suggestions, its own button kept out of the combo box's; `Tags`, on `TagGroup`, a chip acting on a click and its × removing it; a tree's rows, `.pu-tree-row` and its parts, the tree's behaviour its app's. On the site's Panels page. See [`docs/package.md`](../docs/package.md#step-26-the-suggesting-field-tags-and-a-trees-rows).
+
+Version 1 is done when PhotoMatch's controls are all the design system's: drawn by it after step 2.5, built on it after 2.6, the folder tree's behaviour its own (record 0012).
 
 ## Phase 3: PhotoDev's controls
 

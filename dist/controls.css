@@ -662,3 +662,186 @@
 .pu-field[data-disabled] {
   opacity: 0.4;
 }
+
+/* A field that suggests as one types (plan step 2.6): the text field, its end inside it, its list
+   a popover at least as wide as the field. */
+.pu-combobox {
+  position: relative;
+  min-width: 0;
+}
+
+.pu-combobox-field {
+  position: relative;
+}
+
+.pu-combobox .pu-field {
+  width: 100%;
+  padding-right: var(--pu-space-24);
+}
+
+.pu-combobox-end {
+  position: absolute;
+  top: 50%;
+  right: var(--pu-space-4);
+  display: inline-flex;
+  transform: translateY(-50%);
+}
+
+.pu-combobox-chevron {
+  color: var(--pu-color-text-quiet);
+  pointer-events: none;
+}
+
+.pu-combobox-popover {
+  min-width: var(--trigger-width);
+  max-height: 240px;
+}
+
+.pu-combobox-popover .pu-listbox-item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Tags as chips (plan step 2.6): the chip colour, 3 px corners, a × that removes each. */
+.pu-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--pu-space-4);
+}
+
+.pu-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pu-space-2);
+  max-width: 100%;
+  min-height: var(--pu-size-menu-row);
+  padding: 0 var(--pu-space-2) 0 var(--pu-space-8);
+  border: 1px solid var(--pu-color-edge);
+  border-radius: var(--pu-radius-control);
+  background: var(--pu-color-chip);
+  color: var(--pu-color-text);
+  font-size: var(--pu-font-size-text);
+  cursor: default;
+  outline: none;
+}
+
+.pu-tag[data-hovered] {
+  border-color: var(--pu-color-text-quiet);
+}
+
+.pu-tag[data-focus-visible] {
+  outline: 2px solid var(--pu-color-accent);
+  outline-offset: 1px;
+}
+
+.pu-tag-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pu-tag-remove {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--pu-radius-control);
+  background: none;
+  color: var(--pu-color-text-quiet);
+  outline: none;
+  --pu-icon-size: 12px;
+}
+
+.pu-tag-remove[data-hovered] {
+  background: var(--pu-color-pressed);
+  color: var(--pu-color-text);
+}
+
+.pu-tag-remove[data-focus-visible] {
+  outline: 2px solid var(--pu-color-accent);
+}
+
+/* A tree's rows, for an app's own tree (plan step 2.6): 24 px high, the current one softly in the
+   accent, the one with the keys ringed in it, a twisty that turns, a count at the end, and a row
+   things are dragged onto lit up. An app's tree keeps its behaviour: these are its rows' look. */
+.pu-tree-row {
+  display: flex;
+  align-items: center;
+  gap: var(--pu-space-2);
+  min-height: calc(var(--pu-size-tree-row) * var(--pu-text-scale, 1));
+  padding-right: var(--pu-space-6);
+  border-radius: var(--pu-radius-control);
+  white-space: nowrap;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pu-tree-row:hover {
+  background: var(--pu-color-control);
+}
+
+.pu-tree-row[data-current] {
+  background: var(--pu-color-selected);
+  color: var(--pu-color-text);
+}
+
+.pu-tree-row[data-quiet] {
+  color: var(--pu-color-text-quiet);
+}
+
+[role="treeitem"]:focus {
+  outline: none;
+}
+
+[role="treeitem"]:focus-visible > .pu-tree-row {
+  box-shadow: inset 0 0 0 1px var(--pu-color-accent);
+}
+
+.pu-tree-row[data-drop-target] {
+  background: color-mix(in srgb, var(--pu-color-accent) 30%, transparent);
+  outline: 2px solid var(--pu-color-accent);
+  outline-offset: -2px;
+}
+
+.pu-tree-twisty {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: calc(16px * var(--pu-text-scale, 1));
+  height: calc(16px * var(--pu-text-scale, 1));
+  color: var(--pu-color-text-quiet);
+}
+
+.pu-tree-twisty svg {
+  width: calc(12px * var(--pu-text-scale, 1));
+  height: calc(12px * var(--pu-text-scale, 1));
+  fill: currentColor;
+  transform: rotate(-90deg);
+}
+
+.pu-tree-twisty[data-open] svg {
+  transform: none;
+}
+
+.pu-tree-twisty:hover {
+  color: var(--pu-color-text);
+}
+
+.pu-tree-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pu-tree-count {
+  flex: none;
+  margin-left: var(--pu-space-8);
+  color: var(--pu-color-text-quiet);
+  font-size: var(--pu-font-size-caption);
+  font-variant-numeric: tabular-nums;
+}

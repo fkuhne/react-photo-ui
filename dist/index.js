@@ -10,3 +10,5 @@ export { Select } from "./Select";
 export { Checkbox, RadioGroup, Segmented, Slider, Switch, ToggleButton, } from "./Choices";
 export { Dialog, DialogTitle } from "./Dialog";
 export { Field } from "./Field";
+export { ComboBox } from "./ComboBox";
+export { Tags } from "./Tags";

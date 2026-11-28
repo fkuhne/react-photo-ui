@@ -27,3 +27,5 @@ export {
 } from "./Choices";
 export { Dialog, DialogTitle, type DialogProps } from "./Dialog";
 export { Field, type FieldProps } from "./Field";
+export { ComboBox, type ComboBoxItem, type ComboBoxProps } from "./ComboBox";
+export { Tags, type TagItem, type TagsProps } from "./Tags";

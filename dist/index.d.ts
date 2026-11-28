@@ -7,3 +7,5 @@ export { Select, type SelectOption, type SelectProps } from "./Select";
 export { Checkbox, RadioGroup, Segmented, Slider, Switch, ToggleButton, type CheckboxProps, type RadioGroupProps, type RadioOption, type SegmentOption, type SegmentedProps, type SliderProps, type SwitchProps, type ToggleButtonProps, } from "./Choices";
 export { Dialog, DialogTitle, type DialogProps } from "./Dialog";
 export { Field, type FieldProps } from "./Field";
+export { ComboBox, type ComboBoxItem, type ComboBoxProps } from "./ComboBox";
+export { Tags, type TagItem, type TagsProps } from "./Tags";
