@@ -140,6 +140,10 @@ On 2026-11-27, from the owner's look at the live site: a dropdown's list opened 
 
 On 2026-11-27, from the owner's look at the live site: "only buttons are ok" on colours. The controls drew a selection three ways, the solid accent (switch, checkbox, radio, an open list's row), the soft accent (a tree row) and grey (segmented choices, toggles). Now one rule: a setting on or off, and a button the first choice, take the solid `accent`; the item or choice that is the current one in a set or list takes the soft `selected` tint, with an `accent` edge on a button. Changed: a list's focused row, toggles, segmented choices, apart or joined.
 
+## The hidden input kept in its row
+
+On 2026-11-28, from the owner: in PhotoMatch, ticking a box at the foot of the scrolled Tools panel moved the whole page up, the grid cut, until the app was opened again. React Aria hides a checkbox's, a switch's and a radio's real input with `position: absolute` (its `VisuallyHidden`, 1.22.1); with no positioned control around it, the input sat outside its row, and the browser scrolled the page to it when a click gave it the focus. `.pu-checkbox`, `.pu-switch` and `.pu-radio` are `position: relative` now. PhotoMatch's self-check reproduced it, the page's body scrolled 523 px, and passes with it.
+
 ## Commands
 
 ```sh

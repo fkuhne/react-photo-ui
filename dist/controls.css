@@ -352,6 +352,9 @@
 
 /* A switch: a track 28 by 16 px, its knob at the end that's on, in the accent while on. */
 .pu-switch {
+  /* React Aria hides the real input inside with position: absolute: kept in this row, so a click
+     that gives it the focus never scrolls the page to it. */
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--pu-space-8);
@@ -403,6 +406,9 @@
 
 /* A checkbox: a box of 14 px, the accent with its tick while ticked. */
 .pu-checkbox {
+  /* React Aria hides the real input inside with position: absolute: kept in this row, so a click
+     that gives it the focus never scrolls the page to it. */
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--pu-space-6);
@@ -534,6 +540,9 @@
 }
 
 .pu-radio {
+  /* React Aria hides the real input inside with position: absolute: kept in this row, so a click
+     that gives it the focus never scrolls the page to it. */
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--pu-space-6);
